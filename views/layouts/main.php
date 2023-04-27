@@ -5,28 +5,45 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/public/assests/login.css">
+    <link rel="stylesheet" href="/public/assests/main.css">
+    <link rel="stylesheet" href="/public/assests/disciplines.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+    </style>
     <title></title>
 </head>
 <body>
 <header>
-    <nav>
-        <a href="<?= app()->route->getUrl('/hello') ?>">Gabella</a>
-        <?php
+    <div class="header-flex">
+        <div class="bar-title">
+            <p class="title"><a href="<?= app()->route->getUrl('/main') ?>">Gabella Book</a></p>
+        </div>
+        <div class="bar">
+            <?php
             if (!app()->auth::check()):
-        ?>
-            <a href="<?= app()->route->getUrl('/login') ?>">Sign In</a>
-        <?php
+                ?>
+                <p class="tab-bar"><a href="<?= app()->route->getUrl('/login') ?>">Sign In</a></p>
+            <?php
             else:
-        ?>
-            <a href="<?= app()->route->getUrl('/logout') ?>">Exit (<?= app()->auth::user()->login ?>)</a>
-        <?php
+                ?>
+                <ul class="list">
+                    <p class="tab-bar"><a href="#">Disciplines</a></p>
+                    <p class="tab-bar"><a href="#">Groups</a></p>
+                    <p class="tab-bar"><a href="<?= app()->route->getUrl('/logout') ?>">Exit</a></p>
+                </ul>
+            <?php
             endif;
-        ?>
-    </nav>
+            ?>
+        </div>
+    </div>
 </header>
-<main>
-    <?= $content ?? '' ?>
-</main>
-
+<?= $content ?? '' ?>
+<footer>
+    <div>
+        <p>© 2023 - All rights reserved</p>
+        <p>gabellabook@gmail.com</p>
+    </div>
+</footer>
 </body>
 </html>
