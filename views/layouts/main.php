@@ -10,16 +10,15 @@
 <body>
 <header>
     <nav>
-        <a href="<?= app()->route->getUrl('/hello') ?>">Главная</a>
+        <a href="<?= app()->route->getUrl('/hello') ?>">Gabella</a>
         <?php
             if (!app()->auth::check()):
         ?>
-            <a href="<?= app()->route->getUrl('/login') ?>">Вход</a>
-            <a href="<?= app()->route->getUrl('/signup') ?>">Регистрация</a>
+            <a href="<?= app()->route->getUrl('/login') ?>">Sign In</a>
         <?php
             else:
         ?>
-            <a href="<?= app()->route->getUrl('/logout') ?>">Выход (<?= app()->auth::user()->login ?>)</a>
+            <a href="<?= app()->route->getUrl('/logout') ?>">Exit (<?= app()->auth::user()->login ?>)</a>
         <?php
             endif;
         ?>
