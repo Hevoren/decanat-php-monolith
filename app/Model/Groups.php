@@ -6,10 +6,11 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class Students extends Model
+class Groups extends Model
 {
-    protected $table = 'students';
-    protected $primaryKey = 'student_id';
+    protected $table = 'groups';
+    protected $primaryKey = 'group_id';
     use HasFactory;
     public $timestamps = false;
+
 }

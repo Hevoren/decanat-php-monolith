@@ -72,19 +72,19 @@ main {
     flex-direction: column;
 }
 
-.main-flex {
-    margin-top: 100px;
+.main-flex{
+    margin-top: -100px;
 }
 
-.div-main-title {
+.div-main-title{
     text-align: center;
 }
 
-.main-title {
+.main-title{
     font-size: 32px;
 }
 
-.wrapper {
+.wrapper{
     margin-top: 50px;
     display: grid;
     grid-template-columns: 270px 270px 270px 270px;
@@ -103,10 +103,10 @@ main {
     cursor: pointer;
     transition: 0.2s;
     font-size: 16px;
-    text-decoration: none;
+
 }
 
-.card:hover {
+.card:hover{
     font-size: 18px;
     border: 5px solid #7abaca;
     color: #7abaca;

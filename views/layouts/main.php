@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../php-framework/public/assests/login.css">
     <link rel="stylesheet" href="../php-framework/public/assests/main.css">
     <link rel="stylesheet" href="../php-framework/public/assests/disciplines.css">
+    <link rel="stylesheet" href="../php-framework/public/assests/students.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
     </style>
@@ -28,8 +29,8 @@
             else:
                 ?>
                 <ul class="list">
-                    <p class="tab-bar"><a href="#">Disciplines</a></p>
-                    <p class="tab-bar"><a href="#">Groups</a></p>
+                    <p class="tab-bar"><a href="<?= app()->route->getUrl('/discipline') ?>">Disciplines</a></p>
+                    <p class="tab-bar"><a href="<?= app()->route->getUrl('/group') ?>">Groups</a></p>
                     <p class="tab-bar"><a href="<?= app()->route->getUrl('/logout') ?>">Exit</a></p>
                 </ul>
             <?php

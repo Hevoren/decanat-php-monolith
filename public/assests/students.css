@@ -72,46 +72,54 @@ main {
     flex-direction: column;
 }
 
-.main-flex {
+.main-flex-students {
     margin-top: 100px;
-}
-
-.div-main-title {
-    text-align: center;
-}
-
-.main-title {
-    font-size: 32px;
-}
-
-.wrapper {
-    margin-top: 50px;
-    display: grid;
-    grid-template-columns: 270px 270px 270px 270px;
-    grid-template-rows: 150px 150px 150px;
-}
-
-.card {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: black;
-    width: 250px;
-    height: 130px;
-    border-radius: 10px;
+    width: 750px;
+    height: 450px;
     border: 2px solid white;
-    cursor: pointer;
-    transition: 0.2s;
-    font-size: 16px;
+    border-radius: 10px;
+}
+
+.stud-list {
+    display: flex;
+    flex-direction: column;
+    width: 750px;
+    height: 450px;
+}
+
+.students-title {
+    margin: 0;
+    font-size: 32px;
+    height: 15%;
+}
+
+.stud-t {
+    margin: 10px 15px;
+}
+
+.stud-list-wrapper {
+    margin-left: 110px;
+    height: 85%;
+    display: grid;
+    grid-template-columns: 200px 200px 200px;
+    grid-template-rows: 35px 35px 35px 35px 35px 35px 35px 35px 35px 35px;
+}
+
+.stud-list-wrapper div a {
     text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+    transition: transform 0.3s ease-in-out;
 }
 
-.card:hover {
-    font-size: 18px;
-    border: 5px solid #7abaca;
+.stud-list-wrapper div {
+    margin: 0;
+}
+
+.stud-list-wrapper div a:hover{
     color: #7abaca;
+    transform: scale(1.1);
 }
-
 
 /*  */
 

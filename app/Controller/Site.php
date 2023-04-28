@@ -3,6 +3,8 @@
 namespace Controller;
 
 use Model\Disciplines;
+use Model\Groups;
+use Model\StudentGroups;
 use Model\Students;
 use Src\View;
 use Src\Request;
@@ -13,22 +15,27 @@ class Site
 {
     public function main(): string
     {
-        $students = Students::all();
-        return (new View())->render('site.main', ['students' => $students]);
+        return (new View())->render('site.main');
     }
 
-    public function disciplines(): string
+    public function disciplines(Request $request): string
     {
+        
         $disciplines = Disciplines::all();
         return new View('site.discipline', ['disciplines' => $disciplines]);
     }
 
-    public function signup(Request $request): string
+    public function groups(): string
     {
-        if ($request->method==='POST' && User::create($request->all())){
-            app()->route->redirect('/main');
-        }
-        return new View('site.signup');
+        $groups = Groups::all();
+        return new View('site.group', ['groups' => $groups]);
+    }
+
+    public function students(Request $request): string
+    {
+        $groups = Groups::where('group_id', $request->group_id)->get();
+        $students = Students::where('group_id', $request->group_id)->get();
+        return (new View())->render('site.student', ['students' => $students, 'groups' => $groups]);
     }
 
     public function login(Request $request): string
