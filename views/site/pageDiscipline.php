@@ -2,7 +2,11 @@
     <div class="main-flex-page-discipline">
         <div class="card-page-discipline">
             <div class="discipline-title">
-                <p class="disc-t">JavaScript</p>
+                <p class="disc-t">
+<!--                    --><?php //foreach ($disciplines as $discipline) { ?>
+<!--                        --><?php //= $discipline->discipline_name; ?>
+<!--                    --><?php //} ?>
+                </p>
             </div>
             <div class="discipline-info">
                 <div class="right-column">
@@ -21,17 +25,13 @@
                 </div>
             </div>
             <div class="group-wrapper">
-                <div class="group-title"><a href="#">411</a></div>
-                <div class="group-title"><a href="#">411</a></div>
-                <div class="group-title"><a href="#">411</a></div>
-
-                <div class="group-title"><a href="#">411</a></div>
-                <div class="group-title"><a href="#">411</a></div>
-                <div class="group-title"><a href="#">411</a></div>
-
-                <div class="group-title"><a href="#">411</a></div>
-                <div class="group-title"><a href="#">411</a></div>
-                <div class="group-title"><a href="#">411</a></div>
+                <!--                --><?php //foreach ($disciplines as $discipline) { ?>
+                <!--                    <div>-->
+                <!--                        <a href="#">-->
+                <!--                            --><?php //= $discipline->groupDisciplines->disciplne_name ?>
+                <!--                        </a>-->
+                <!--                    </div>-->
+                <!--                --><?php //} ?>
             </div>
             <div class="card-footer">
                 <p><a href="#">Groups</a></p>
