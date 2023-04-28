@@ -1,5 +1,5 @@
 <main>
-    <div class="main-flex">
+    <div class="main-flex-discipline">
         <div class="div-main-title-discipline">
             <p class="main-title">Disciplines</p>
         </div>
