@@ -2,6 +2,7 @@
 
 namespace Controller;
 
+use Model\Disciplines;
 use Model\Students;
 use Src\View;
 use Src\Request;
@@ -18,7 +19,8 @@ class Site
 
     public function disciplines(): string
     {
-        return new View('site.discipline', ['message' => 'hello working']);
+        $disciplines = Disciplines::all();
+        return new View('site.discipline', ['disciplines' => $disciplines]);
     }
 
     public function signup(Request $request): string

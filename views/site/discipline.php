@@ -5,20 +5,11 @@
         </div>
 
         <div class="wrapper">
-            <input type="submit" class="card" value="Discipline"></input>
-            <input type="submit" class="card" value="Discipline"></input>
-            <input type="submit" class="card" value="Discipline"></input>
-            <input type="submit" class="card" value="Discipline"></input>
-
-            <input type="submit" class="card" value="Discipline"></input>
-            <input type="submit" class="card" value="Discipline"></input>
-            <input type="submit" class="card" value="Discipline"></input>
-            <input type="submit" class="card" value="Discipline"></input>
-
-            <input type="submit" class="card" value="Discipline"></input>
-            <input type="submit" class="card" value="Discipline"></input>
-            <input type="submit" class="card" value="Discipline"></input>
-            <input type="submit" class="card" value="Discipline"></input>
+            <?php
+            foreach ($disciplines as $discipline){
+                echo '<a class="card">' . $discipline->discipline_name . '</a>';
+            }
+            ?>
         </div>
     </div>
 </main>
