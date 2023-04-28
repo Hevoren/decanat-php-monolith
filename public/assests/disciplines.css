@@ -72,11 +72,11 @@ main {
     flex-direction: column;
 }
 
-.main-flex {
+.main-flex-discipline {
     margin-top: 100px;
 }
 
-.div-main-title {
+.div-main-title-discipline {
     text-align: center;
 }
 

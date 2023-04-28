@@ -1,6 +1,6 @@
 <main>
     <div class="main-flex">
-        <div class="div-main-title">
+        <div class="div-main-title-discipline">
             <p class="main-title">Disciplines</p>
         </div>
 

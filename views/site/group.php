@@ -1,6 +1,6 @@
 <main>
-    <div class="main-flex">
-        <div class="div-main-title">
+    <div class="main-flex-groups">
+        <div class="div-main-title-group">
             <p class="main-title">Groups</p>
         </div>
 

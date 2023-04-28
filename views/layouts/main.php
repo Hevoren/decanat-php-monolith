@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="../php-framework/public/assests/main.css">
     <link rel="stylesheet" href="../php-framework/public/assests/disciplines.css">
     <link rel="stylesheet" href="../php-framework/public/assests/students.css">
+    <link rel="stylesheet" href="../php-framework/public/assests/page_discipline.css">
+    <link rel="stylesheet" href="../php-framework/public/assests/groups.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
     </style>
