@@ -9,11 +9,15 @@
                 ?>
             </div>
             <div class="stud-list-wrapper">
-                <?php
-                foreach ($students as $student) {
-                    echo '<div><a href="#">' . $student->surname . '&nbsp' . mb_substr("$student->name", 0, 1). '.' . '&nbsp' . mb_substr("$student->mid_name", 0, 1) . '</a></div>';
-                }
-                ?>
+                <?php foreach ($students as $student) { ?>
+                    <div>
+                        <a href="#">
+                            <?= $student->surname ?>
+                            <?= "&nbsp".mb_substr($student->name, 0, 1)."."?>
+                            <?= "&nbsp".mb_substr($student->mid_name, 0, 1)?>
+                        </a>
+                    </div>
+                <?php } ?>
             </div>
         </div>
     </div>
