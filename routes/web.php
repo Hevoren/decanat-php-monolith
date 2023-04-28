@@ -3,6 +3,7 @@
 use Src\Route;
 
 Route::add('GET', '/main', [Controller\Site::class, 'main']);
+Route::add('GET', '/', [Controller\Site::class, 'main']);
 Route::add('GET', '/discipline', [Controller\Site::class, 'disciplines'])
     ->middleware('auth');
 Route::add('GET', '/group', [Controller\Site::class, 'groups'])
