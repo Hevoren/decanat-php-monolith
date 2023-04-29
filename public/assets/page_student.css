@@ -180,17 +180,11 @@ main {
     border-right: 2px dashed white;
 }
 
-.flex-hour p{
-}
-
 .flex-control {
     line-height: 30px;
     text-align: center;
     width: 45%;
     border-right: 2px dashed white;
-}
-
-.flex-control p {
 }
 
 .flex-grade {

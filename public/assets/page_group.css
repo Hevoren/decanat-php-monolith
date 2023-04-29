@@ -109,13 +109,16 @@ main {
 }
 
 .group-title-group a {
-    text-decoration: none;
+    text-decoration: underline #7abaca;
+    text-decoration-thickness: 3px;
     border-radius: 5px;
     display: inline-block;
     transition: transform 0.3s ease-in-out;
 }
 
 .group-title-group a:hover {
+    text-decoration: underline white;
+    text-decoration-thickness: 3px;
     color: #7abaca;
     transform: scale(1.1);
 }
@@ -145,13 +148,16 @@ main {
 }
 
 .card-footer p a {
-    text-decoration: none;
+    text-decoration: underline #7abaca;
+    text-decoration-thickness: 3px;
     border-radius: 5px;
     display: inline-block;
     transition: transform 0.3s ease-in-out;
 }
 
 .card-footer a:hover {
+    text-decoration: underline white;
+    text-decoration-thickness: 3px;
     color: #7abaca;
     transform: scale(1.1);
 }

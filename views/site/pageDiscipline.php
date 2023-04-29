@@ -17,15 +17,19 @@
                     </div>
                 </div>
                 <div class="left-column">
+                    <?php foreach ($disciplines as $discipline) { ?>
                     <div>
-                        <?php
-                        foreach ($disciplines as $discipline) {
-                            echo '<p>' . $discipline->semestrDisciplines->semestr . '</p>';
-                            echo '<p>' . $discipline->controlDisciplines->control_name . '</p>';
-                            echo '<p>' . $discipline->hours . '</p>';
-                        }
-                        ?>
+                        <p>
+                            <?= $discipline->semestrDisciplines->semestr ?>
+                        </p>
+                        <p>
+                            <?= $discipline->controlDisciplines->control_name ?>
+                        </p>
+                        <p>
+                            <?= $discipline->hours ?>
+                        </p>
                     </div>
+                    <?php } ?>
                 </div>
             </div>
             <div class="group-wrapper">
@@ -39,7 +43,7 @@
                     <?php } ?>
                 <?php } ?>
             </div>
-            <div class="card-footer">
+            <div class="card-footer-groups">
                 <p><a href="<?= app()->route->getUrl('/group') ?>">Groups</a></p>
             </div>
         </div>

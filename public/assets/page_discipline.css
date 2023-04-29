@@ -121,7 +121,8 @@ main {
 }
 
 .group-title a {
-    text-decoration: none;
+    text-decoration: underline #7abaca;
+    text-decoration-thickness: 3px;
     border-radius: 5px;
     display: inline-block;
     transition: transform 0.3s ease-in-out;
@@ -129,6 +130,8 @@ main {
 
 .group-title a:hover{
     color: #7abaca;
+    text-decoration: underline white;
+    text-decoration-thickness: 3px;
     transform: scale(1.1);
 }
 
@@ -141,25 +144,28 @@ main {
 
 }
 
-.card-footer{
+.card-footer-groups{
     margin: 0;
     height: 20%;
 }
 
-.card-footer p{
+.card-footer-groups p{
     font-size: 18px;
     text-align: center;
     margin-top: 35px;
 }
 
-.card-footer p a{
-    text-decoration: none;
+.card-footer-groups p a{
+    text-decoration: underline #7abaca;
+    text-decoration-thickness: 3px;
     border-radius: 5px;
     display: inline-block;
     transition: transform 0.3s ease-in-out;
 }
 
-.card-footer a:hover{
+.card-footer-groups a:hover{
+    text-decoration: underline white;
+    text-decoration-thickness: 3px;
     color: #7abaca;
     transform: scale(1.1);
 }
