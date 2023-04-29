@@ -4,7 +4,7 @@ namespace Controller;
 
 use Model\Controls;
 use Model\Disciplines;
-use Model\GroupDisciplines;
+use Model\PageDisciplines;
 use Model\Groups;
 use Model\Semestrs;
 use Model\StudentGroups;
@@ -41,9 +41,11 @@ class Site
 
     }
 
-    public function groupDiscipline(Request $request): string
+    public function pageDiscipline(Request $request): string
     {
-        $disciplines = GroupDisciplines::where('discipline_id', $request->discipline_id)->get();
+
+
+        $disciplines = PageDisciplines::where('discipline_id', $request->discipline_id)->get();
         return new View('site.pageDiscipline', ['disciplines' => $disciplines]);
     }
 }

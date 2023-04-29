@@ -2,11 +2,11 @@
     <div class="main-flex-page-discipline">
         <div class="card-page-discipline">
             <div class="discipline-title">
-                <p class="disc-t">
-<!--                    --><?php //foreach ($disciplines as $discipline) { ?>
-<!--                        --><?php //= $discipline->discipline_name; ?>
-<!--                    --><?php //} ?>
-                </p>
+                <?php foreach ($disciplines as $discipline) { ?>
+                    <p class="disc-t">
+                        <?= $discipline->discipline_name ?>
+                    </p>
+                <?php } ?>
             </div>
             <div class="discipline-info">
                 <div class="right-column">
@@ -18,23 +18,29 @@
                 </div>
                 <div class="left-column">
                     <div>
-                        <p>I</p>
-                        <p>exam</p>
-                        <p>120</p>
+                        <?php
+                        foreach ($disciplines as $discipline) {
+                            echo '<p>' . $discipline->semestrDisciplines->semestr . '</p>';
+                            echo '<p>' . $discipline->controlDisciplines->control_name . '</p>';
+                            echo '<p>' . $discipline->hours . '</p>';
+                        }
+                        ?>
                     </div>
                 </div>
             </div>
             <div class="group-wrapper">
-                <!--                --><?php //foreach ($disciplines as $discipline) { ?>
-                <!--                    <div>-->
-                <!--                        <a href="#">-->
-                <!--                            --><?php //= $discipline->groupDisciplines->disciplne_name ?>
-                <!--                        </a>-->
-                <!--                    </div>-->
-                <!--                --><?php //} ?>
+                <?php foreach ($disciplines as $discipline) { ?>
+                    <?php foreach ($discipline->groupDisc as $group) {?>
+                    <div class="group-title">
+                        <a href="<?= app()->route->getUrl('/student') . '?group_id=' .  $group->group_id ?>">
+                            <?= $group->group_name ?>
+                        </a>
+                    </div>
+                        <?php }?>
+                <?php } ?>
             </div>
             <div class="card-footer">
-                <p><a href="#">Groups</a></p>
+                <p><a href="<?= app()->route->getUrl('/group') ?>">Groups</a></p>
             </div>
         </div>
     </div>
