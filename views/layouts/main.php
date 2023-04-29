@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="../php-framework/public/assets/page_discipline.css">
     <link rel="stylesheet" href="../php-framework/public/assets/groups.css">
     <link rel="stylesheet" href="../php-framework/public/assets/page_group.css">
+    <link rel="stylesheet" href="../php-framework/public/assets/page_student.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
     </style>

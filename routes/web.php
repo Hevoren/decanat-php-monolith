@@ -14,5 +14,7 @@ Route::add('GET', '/pageDiscipline', [Controller\Site::class, 'pageDiscipline'])
     ->middleware('auth');
 Route::add('GET', '/pageGroup', [Controller\Site::class, 'pageGroup'])
     ->middleware('auth');
+Route::add('GET', '/pageStudent', [Controller\Site::class, 'pageStudent'])
+    ->middleware('auth');
 Route::add(['GET', 'POST'], '/login', [Controller\AuthControl::class, 'login']);
 Route::add('GET', '/logout', [Controller\AuthControl::class, 'logout']);

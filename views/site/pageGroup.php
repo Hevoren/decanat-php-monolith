@@ -42,6 +42,7 @@
                 <?php foreach ($groups as $group) { ?>
                     <?php foreach ($group->groupDisc as $discipline) { ?>
                         <p><a href="<?= app()->route->getUrl('/student') . '?group_id=' . $discipline->pivot->group_id ?>">Students</a></p>
+                        <?php break ?>
                     <?php } ?>
                 <?php } ?>
 

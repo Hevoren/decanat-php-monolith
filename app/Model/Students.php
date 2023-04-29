@@ -12,4 +12,9 @@ class Students extends Model
     protected $primaryKey = 'student_id';
     use HasFactory;
     public $timestamps = false;
+
+    public function studentGroups():BelongsTo
+    {
+        return $this->belongsTo(Groups::class, 'group_id', 'group_id');
+    }
 }

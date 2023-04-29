@@ -52,4 +52,10 @@ class Site
         $groups = PageGroups::where('group_id', $request->group_id)->get();
         return new View('site.pageGroup', ['groups' => $groups]);
     }
+
+    public function pageStudent(Request $request): string
+    {
+        $students = Students::where('student_id', $request->student_id)->get();
+        return new View('site.pageStudent', ['students' => $students]);
+    }
 }

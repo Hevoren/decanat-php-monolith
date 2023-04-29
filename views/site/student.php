@@ -11,7 +11,7 @@
             <div class="stud-list-wrapper">
                 <?php foreach ($students as $student) { ?>
                     <div>
-                        <a href="#">
+                        <a href="<?= app()->route->getUrl('/pageStudent') . '?student_id=' . $student->student_id ?>">
                             <?= $student->surname ?>
                             <?= "&nbsp".mb_substr($student->name, 0, 1)."."?>
                             <?= "&nbsp".mb_substr($student->mid_name, 0, 1)?>

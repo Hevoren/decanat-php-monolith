@@ -1,0 +1,221 @@
+* {
+    margin: auto;
+    padding: auto;
+    box-sizing: border-box;
+    color: white;
+}
+
+
+body {
+    height: max-content;
+    max-width: 1920px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+header {
+    background-color: rgb(17, 17, 17);
+    height: 7vh;
+}
+
+.header-flex {
+    height: 7vh;
+    display: flex;
+    flex-direction: row;
+}
+
+.list {
+    margin-left: 80px;
+    width: 450px;
+    display: flex;
+    flex-direction: row;
+}
+
+.title a {
+    font-size: 32px;
+    text-decoration: none;
+    text-align: center;
+}
+
+.tab-bar {
+    display: inline;
+}
+
+.tab-bar a {
+    font-size: 23px;
+    text-decoration: none;
+    transition: 0.5s;
+}
+
+.tab-bar a:hover {
+    color: #7abaca;
+}
+
+.bar-title {
+    text-align: center;
+    min-width: 50%;
+}
+
+.bar {
+    width: 50%;
+}
+
+.title {
+    display: inline;
+}
+
+/*  */
+
+main {
+    background-color: black;
+    height: 88vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-flex {
+    margin-top: 100px;
+}
+
+.main-flex {
+    display: flex;
+    flex-direction: row;
+}
+
+.student {
+    margin-right: 100px;
+    border: 2px solid white;
+    border-radius: 10px;
+    width: 420px;
+    height: 440px;
+    display: flex;
+    flex-direction: column;
+}
+
+.student-info{
+    font-size: 16px;
+    display: flex;
+    flex-direction: row;
+    height: 25%;
+    width: 300px;
+    margin-left: 60px;
+}
+
+.student-info-more {
+    font-size: 16px;
+    display: flex;
+    flex-direction: row;
+    height: 25%;
+    width: 300px;
+    margin-left: 60px;
+}
+
+.student-footer {
+    font-size: 16px;
+    display: flex;
+    flex-direction: row;
+    height: 10%;
+    width: 300px;
+    margin-left: 60px;
+}
+
+.student-name {
+    margin: 0;
+    height: 10%;
+    font-size: 32px;
+}
+
+.student-name-item {
+    margin: 10px 15px;
+}
+
+.left-column-students {
+    font-weight: bold;
+    width: 50%;
+    line-height: 30px;
+    text-align: left;
+}
+
+.right-column-students {
+    text-align: right;
+    width: 50%;
+    line-height: 30px;
+}
+
+.grade-card {
+    border: 2px solid white;
+    border-radius: 10px;
+    width: 420px;
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+}
+
+.grade-card-title {
+    margin: 0;
+    height: 10%;
+    font-size: 32px;
+}
+
+.grade-card-title-item {
+    margin: 10px 15px;
+}
+
+.grade-card-flex {
+    margin-top: 40px;
+    width: 300px;
+    display: flex;
+    flex-direction: row;
+}
+
+.flex-disc {
+    line-height: 30px;
+    width: 35%;
+    border-right: 2px dashed white;
+}
+
+.flex-hour {
+    line-height: 30px;
+    text-align: right;
+    width: 25%;
+    border-right: 2px dashed white;
+}
+
+.flex-hour p{
+    margin-right: 25px;
+}
+
+.flex-control {
+    line-height: 30px;
+    text-align: right;
+    width: 25%;
+    border-right: 2px dashed white;
+}
+
+.flex-control p {
+    margin-right: 15px;
+}
+
+.flex-grade {
+    line-height: 30px;
+    text-align: right;
+    width: 15%;
+    border-right: 2px dashed white;
+}
+
+.flex-grade p{
+    margin-right: 15px;
+}
+
+/*  */
+
+footer {
+    background-color: black;
+}
+
+footer div {
+    background-color: rgb(17, 17, 17);
+    height: 5vh;
+    display: flex;
+    flex-direction: row;
+    font-size: 16px;
+}

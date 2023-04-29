@@ -12,5 +12,4 @@ class Groups extends Model
     protected $primaryKey = 'group_id';
     use HasFactory;
     public $timestamps = false;
-
 }
