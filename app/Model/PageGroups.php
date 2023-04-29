@@ -16,11 +16,11 @@ class PageGroups extends Model
 
     public function courseGroup():BelongsTo
     {
-        return $this->belongsTo(Course::class, 'course_id', 'course_id');
+        return $this->belongsTo(Courses::class, 'course_id', 'course_id');
     }
     public function educationGroup():BelongsTo
     {
-        return $this->belongsTo(EducationForm::class, 'edcform_id', 'edcform_id');
+        return $this->belongsTo(EducationForms::class, 'edcform_id', 'edcform_id');
     }
     public function specialityGroup():BelongsTo
     {

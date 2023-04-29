@@ -153,7 +153,7 @@ main {
 .grade-card-title {
     margin: 0;
     height: 10%;
-    font-size: 32px;
+    font-size: 18px;
 }
 
 .grade-card-title-item {
@@ -169,30 +169,28 @@ main {
 
 .flex-disc {
     line-height: 30px;
-    width: 35%;
+    width: 25%;
     border-right: 2px dashed white;
 }
 
 .flex-hour {
     line-height: 30px;
-    text-align: right;
-    width: 25%;
+    text-align: center;
+    width: 15%;
     border-right: 2px dashed white;
 }
 
 .flex-hour p{
-    margin-right: 25px;
 }
 
 .flex-control {
     line-height: 30px;
-    text-align: right;
-    width: 25%;
+    text-align: center;
+    width: 45%;
     border-right: 2px dashed white;
 }
 
 .flex-control p {
-    margin-right: 15px;
 }
 
 .flex-grade {

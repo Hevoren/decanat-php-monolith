@@ -6,14 +6,15 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <!--    <link rel="stylesheet" href="../php-framework/public/assests/login.css">-->
-    <link rel="stylesheet" href="../php-framework/public/assets/login.css">
-    <link rel="stylesheet" href="../php-framework/public/assets/main.css">
-    <link rel="stylesheet" href="../php-framework/public/assets/disciplines.css">
-    <link rel="stylesheet" href="../php-framework/public/assets/students.css">
-    <link rel="stylesheet" href="../php-framework/public/assets/page_discipline.css">
-    <link rel="stylesheet" href="../php-framework/public/assets/groups.css">
-    <link rel="stylesheet" href="../php-framework/public/assets/page_group.css">
-    <link rel="stylesheet" href="../php-framework/public/assets/page_student.css">
+<!--    <link rel="stylesheet" href="/public/assets/login.css">-->
+    <link rel="stylesheet" href="/public/assets/login.css">
+    <link rel="stylesheet" href="/public/assets/main.css">
+    <link rel="stylesheet" href="/public/assets/disciplines.css">
+    <link rel="stylesheet" href="/public/assets/students.css">
+    <link rel="stylesheet" href="/public/assets/page_discipline.css">
+    <link rel="stylesheet" href="/public/assets/groups.css">
+    <link rel="stylesheet" href="/public/assets/page_group.css">
+    <link rel="stylesheet" href="/public/assets/page_student.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
     </style>

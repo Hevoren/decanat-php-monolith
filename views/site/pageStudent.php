@@ -5,8 +5,8 @@
                 <?php foreach ($students as $student) { ?>
                     <p class="student-name-item">
                         <?= $student->surname ?>
-                        <?= "&nbsp".mb_substr($student->name, 0, 1)."."?>
-                        <?= "&nbsp".mb_substr($student->mid_name, 0, 1)?>
+                        <?= "&nbsp" . mb_substr($student->name, 0, 1) . "." ?>
+                        <?= "&nbsp" . mb_substr($student->mid_name, 0, 1) ?>
                     </p>
                 <?php } ?>
             </div>
@@ -20,17 +20,17 @@
                 </div>
                 <div class="right-column-students">
                     <?php foreach ($students as $student) { ?>
-                    <div>
-                        <p>
-                            <?= $student->surname ?>
-                        </p>
-                        <p>
-                            <?= $student->name ?>
-                        </p>
-                        <p>
-                            <?= $student->mid_name ?>
-                        </p>
-                    </div>
+                        <div>
+                            <p>
+                                <?= $student->surname ?>
+                            </p>
+                            <p>
+                                <?= $student->name ?>
+                            </p>
+                            <p>
+                                <?= $student->mid_name ?>
+                            </p>
+                        </div>
                     <?php } ?>
                 </div>
             </div>
@@ -45,17 +45,20 @@
                 </div>
                 <div class="right-column-students">
                     <?php foreach ($students as $student) { ?>
-                    <div>
-                        <p>
-                            <?= $student->birth_date ?>
-                        </p>
-                        <p>
-                            <?= $student->adress ?>
-                        </p>
-                        <p>
-                        </p>
-                        <p></p>
-                    </div>
+                        <div>
+                            <p>
+                                <?= $student->birth_date ?>
+                            </p>
+                            <p>
+                                <?= $student->adress ?>
+                            </p>
+                            <p>
+                                <?= $student->studentGroups->educationForms->edcform_name ?>
+                            </p>
+                            <p>
+                                <?= $student->studentGroups->specialities->speciality_name ?>
+                            </p>
+                        </div>
                     <?php } ?>
                 </div>
             </div>
@@ -67,9 +70,9 @@
                 </div>
                 <div class="right-column-students">
                     <?php foreach ($students as $student) { ?>
-                    <div>
-                        <p><?= $student->studentGroups->group_name ?></p>
-                    </div>
+                        <div>
+                            <p><?= $student->studentGroups->group_name ?></p>
+                        </div>
                     <?php } ?>
                 </div>
             </div>
@@ -80,32 +83,49 @@
             </div>
             <div class="grade-card-flex">
                 <div class="flex-disc">
-                    <div>
-                        <p>JavaScript</p>
-                        <p>JavaScript</p>
-                        <p>JavaScript</p>
-                    </div>
+                    <?php foreach ($students as $student) { ?>
+                        <?php foreach ($student->gradeCards as $discipline) { ?>
+                            <div>
+                                <p>
+                                    <?= $discipline->disciplines->discipline_name ?>
+                                </p>
+                            </div>
+                        <?php } ?>
+                    <?php } ?>
                 </div>
                 <div class="flex-hour">
-                    <div>
-                        <p>120</p>
-                        <p>120</p>
-                        <p>120</p>
-                    </div>
+                    <?php foreach ($students as $student) { ?>
+                        <?php foreach ($student->gradeCards as $discipline) { ?>
+                            <div>
+                                <p>
+                                    <?php echo $discipline->disciplines->hours ?>
+                                </p>
+                            </div>
+                        <?php } ?>
+                    <?php } ?>
                 </div>
                 <div class="flex-control">
-                    <div>
-                        <p>exam</p>
-                        <p>exam</p>
-                        <p>exam</p>
-                    </div>
+                    <?php foreach ($students as $student) { ?>
+                        <?php foreach ($student->gradeCards as $discipline) { ?>
+                            <div>
+                                <p>
+                                    <?php echo $discipline->disciplines->controlDisciplines->control_name ?>
+                                </p>
+                            </div>
+                        <?php } ?>
+                    <?php } ?>
                 </div>
                 <div class="flex-grade">
+                    <?php foreach ($students as $student) { ?>
+                    <?php foreach ($student->gradeCards as $discipline) { ?>
                     <div>
-                        <p>5</p>
-                        <p>5</p>
-                        <p>5</p>
+                        <p>
+                            <?php echo $discipline->grade->grade ?>
+                        </p>
+
                     </div>
+                        <?php } ?>
+                    <?php } ?>
                 </div>
             </div>
         </div>

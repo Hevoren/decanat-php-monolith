@@ -12,4 +12,15 @@ class Groups extends Model
     protected $primaryKey = 'group_id';
     use HasFactory;
     public $timestamps = false;
+
+    public function specialities()
+    {
+        return $this->belongsTo(Specialities::class, 'speciality_id');
+    }
+
+    public function educationForms()
+    {
+        return $this->belongsTo(EducationForms::class, 'edcform_id');
+    }
+
 }

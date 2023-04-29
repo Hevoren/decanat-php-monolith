@@ -2,13 +2,8 @@
 
 namespace Controller;
 
-use Model\Disciplines;
-use Model\Groups;
-use Model\StudentGroups;
-use Model\Students;
 use Src\View;
 use Src\Request;
-use Model\User;
 use Src\Auth\Auth;
 
 class AuthControl

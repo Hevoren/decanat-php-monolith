@@ -6,9 +6,12 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Src\Auth\IdentityInterface;
 
-class User extends Model implements IdentityInterface
+class Users extends Model implements IdentityInterface
 {
     use HasFactory;
+
+    protected $table = 'users';
+    protected $primaryKey = 'user_id';
 
     public $timestamps = false;
     protected $fillable = [

@@ -17,4 +17,10 @@ class Students extends Model
     {
         return $this->belongsTo(Groups::class, 'group_id', 'group_id');
     }
+
+    public function gradeCards()
+    {
+        return $this->hasMany(GradeCards::class, 'student_id', 'student_id');
+    }
+
 }

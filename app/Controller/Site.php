@@ -2,18 +2,13 @@
 
 namespace Controller;
 
-use Model\Controls;
 use Model\Disciplines;
 use Model\PageDisciplines;
 use Model\Groups;
 use Model\PageGroups;
-use Model\Semestrs;
-use Model\StudentGroups;
 use Model\Students;
 use Src\View;
 use Src\Request;
-use Model\User;
-use Src\Auth\Auth;
 
 class Site
 {
@@ -22,7 +17,7 @@ class Site
         return (new View())->render('site.main');
     }
 
-    public function disciplines(Request $request): string
+    public function disciplines(): string
     {
         $disciplines = Disciplines::all();
         return new View('site.discipline', ['disciplines' => $disciplines]);
