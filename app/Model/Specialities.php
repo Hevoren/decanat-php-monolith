@@ -5,12 +5,12 @@ namespace Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class GroupDiscipline extends Model
+class Specialities extends Model
 {
 
-    protected $table = 'group_discipline';
+    protected $table = 'specialities';
 
-    protected $primaryKey = 'grdisc_id';
+    protected $primaryKey = 'speciality_id';
 
     use HasFactory;
 

@@ -30,13 +30,13 @@
             </div>
             <div class="group-wrapper">
                 <?php foreach ($disciplines as $discipline) { ?>
-                    <?php foreach ($discipline->groupDisc as $group) {?>
-                    <div class="group-title">
-                        <a href="<?= app()->route->getUrl('/student') . '?group_id=' .  $group->group_id ?>">
-                            <?= $group->group_name ?>
-                        </a>
-                    </div>
-                        <?php }?>
+                    <?php foreach ($discipline->groupDisc as $group) { ?>
+                        <div class="group-title">
+                            <a href="<?= app()->route->getUrl('/student') . '?group_id=' . $group->group_id ?>">
+                                <?= $group->group_name ?>
+                            </a>
+                        </div>
+                    <?php } ?>
                 <?php } ?>
             </div>
             <div class="card-footer">

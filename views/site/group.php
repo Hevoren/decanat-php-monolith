@@ -7,7 +7,7 @@
         <div class="wrapper">
             <?php
             foreach ($groups as $group) {
-                echo '<a href="' . app()->route->getUrl('/student') . '?group_id=' .  $group->group_id . '" class="card">' . $group->group_name . '</a>';
+                echo '<a href="' . app()->route->getUrl('/pageGroup') . '?group_id=' .  $group->group_id . '" class="card">' . $group->group_name . '</a>';
             }
             ?>
         </div>
