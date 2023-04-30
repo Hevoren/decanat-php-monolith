@@ -7,6 +7,8 @@ use Model\PageDisciplines;
 use Model\Groups;
 use Model\PageGroups;
 use Model\Students;
+use Model\TempUsers;
+use Model\Users;
 use Src\View;
 use Src\Request;
 
@@ -53,4 +55,30 @@ class Site
         $students = Students::where('student_id', $request->student_id)->get();
         return new View('site.pageStudent', ['students' => $students]);
     }
+
+    public function cab(): string
+    {
+        $users = TempUsers::where('active', 1)->get();
+        return new View('site.cab', ['users' => $users]);
+    }
+
+    public function addUser(Request $request): string
+    {
+        $userId = $request->get('id');
+        $tempUser = TempUsers::find($userId);
+        if ($tempUser) {
+            $user = new Users([
+                'name' => $tempUser->name,
+                'login' => $tempUser->login,
+                'password' => $tempUser->password,
+            ]);
+            $user->save();
+            $tempUser->active = 0;
+            $tempUser->save();
+        }
+        $users = TempUsers::where('active', 1)->get();
+        return new View('site.cab', ['users' => $users]);
+    }
+
+
 }

@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="/public/assets/groups.css">
     <link rel="stylesheet" href="/public/assets/page_group.css">
     <link rel="stylesheet" href="/public/assets/page_student.css">
+    <link rel="stylesheet" href="/public/assets/cab.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
     </style>
@@ -37,6 +38,7 @@
                 <ul class="list">
                     <p class="tab-bar"><a href="<?= app()->route->getUrl('/discipline') ?>">Disciplines</a></p>
                     <p class="tab-bar"><a href="<?= app()->route->getUrl('/group') ?>">Groups</a></p>
+                    <p class="tab-bar"><a href="<?= app()->route->getUrl('/cab') ?>">Cab</a></p>
                     <p class="tab-bar"><a href="<?= app()->route->getUrl('/logout') ?>">Exit</a></p>
                 </ul>
             <?php

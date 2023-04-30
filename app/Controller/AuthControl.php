@@ -25,8 +25,10 @@ class AuthControl
             session_unset();
             return new View('site.register');
         }
+
         if ($request->method === 'POST' && TempUsers::create($request->all())) {
-            app()->route->redirect('/discipline');
+            $messageE = 'In a little while our administrator will approve your registration.';
+            return new View('site.register', ['messageE' => $messageE]);
         }
     }
 
