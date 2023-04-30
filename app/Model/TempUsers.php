@@ -6,11 +6,11 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Src\Auth\IdentityInterface;
 
-class Users extends Model implements IdentityInterface
+class TempUsers extends Model implements IdentityInterface
 {
     use HasFactory;
 
-    protected $table = 'users';
+    protected $table = 'temp_users';
     protected $primaryKey = 'id';
 
     public $timestamps = false;

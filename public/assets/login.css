@@ -63,6 +63,7 @@ main {
 }
 
 .form-block {
+    margin: 0;
     width: 400px;
 }
 
@@ -108,6 +109,11 @@ main {
 
 .input-submit:hover {
     background-color: #6296a3;
+}
+
+.offer-a {
+    margin-top: 20px;
+    color: #7abaca;
 }
 
 /*  */

@@ -78,7 +78,7 @@ main {
 
 .card-page-group {
     width: 325px;
-    height: 400px;
+    height: auto;
     border: 2px solid white;
     border-radius: 10px;
     display: flex;
@@ -87,7 +87,7 @@ main {
 
 .discipline-title {
     margin: 0;
-    height: 20%;
+    height: 80px;
     font-size: 32px;
 }
 
@@ -97,7 +97,7 @@ main {
 
 .group-info {
     width: 150px;
-    height: 30%;
+    height: 120px;
     font-size: 16px;
     display: flex;
     flex-direction: row;
@@ -125,11 +125,13 @@ main {
 
 .group-wrapper-group{
     width: 150px;
-    height: 30%;
+    margin-top: 10px;
+    height: auto;
     display: grid;
-    grid-template-columns: 75px 90px;
+    grid-template-columns: auto 1fr;
     align-items: center;
-    grid-template-rows: 33% 33% 33%;
+    grid-auto-rows: auto;
+    grid-gap: 20px;
 }
 
 .group-wrapper-group .group-title-group:nth-child(2n+2){
@@ -138,7 +140,7 @@ main {
 
 .card-footer {
     margin: 0;
-    height: 20%;
+    height: 80px;
 }
 
 .card-footer p {
