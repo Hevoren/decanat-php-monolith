@@ -24,7 +24,6 @@ class Users extends Model implements IdentityInterface
     protected static function booted()
     {
         static::created(function ($users) {
-            $users->password = md5($users->password);
             $users->save();
         });
     }
