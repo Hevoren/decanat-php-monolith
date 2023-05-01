@@ -7,7 +7,6 @@
                     <div class="requests">
                         <p class="user-name"><?= $user->name ?></p>
                         <form method="post" class="request-button">
-                            <input type="hidden" name="id" value="<?= $user->password ?>">
                             <input type="hidden" name="id" value="<?= $user->id ?>">
                             <button class="accept-user" type="submit">Accept</button>
                         </form>

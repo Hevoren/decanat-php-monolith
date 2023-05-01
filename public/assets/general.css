@@ -5,6 +5,9 @@
     color: white;
 }
 
+*::selection{
+    background-color: #3bbfef;
+}
 
 body {
     height: max-content;
@@ -33,7 +36,6 @@ header {
 .title a {
     font-size: 32px;
     text-decoration: none;
-    text-align: center;
 }
 
 .tab-bar {
@@ -56,6 +58,7 @@ header {
 }
 
 .bar {
+    text-align: center;
     width: 50%;
 }
 

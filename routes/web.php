@@ -28,6 +28,10 @@ Route::add('GET', '/addGroup', [Controller\Interactive::class, 'addGroupGet'])
     ->middleware('auth');
 Route::add('POST', '/addGroup', [Controller\Interactive::class, 'addGroup'])
     ->middleware('auth');
+Route::add('GET', '/addStudent', [Controller\Interactive::class, 'addStudentGet'])
+    ->middleware('auth');
+Route::add('POST', '/addStudent', [Controller\Interactive::class, 'addStudent'])
+    ->middleware('auth');
 Route::add(['GET', 'POST'], '/login', [Controller\AuthControl::class, 'login']);
 Route::add(['GET', 'POST'], '/register', [Controller\AuthControl::class, 'signup']);
 Route::add('GET', '/logout', [Controller\AuthControl::class, 'logout']);

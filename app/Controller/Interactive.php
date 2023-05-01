@@ -68,4 +68,26 @@ class Interactive
         }
         return new View('site.group');
     }
+
+    public function addStudentGet(): string
+    {
+        return new View('site.addStudent');
+    }
+
+    public function addStudent(Request $request): string
+    {
+        if ($request->method === 'POST') {
+            $students = new Students([
+                'name' => $request->name,
+                'surname' => $request->surname,
+                'mid_name' => $request->mid_name,
+                'birth_date' => $request->birth_date,
+                'adress' => $request->adress,
+                'group_id' => $request->group_id
+            ]);
+            $students->save();
+            app()->route->redirect('/student?group_id=' . $request->group_id);
+        }
+        return new View('site.student');
+    }
 }

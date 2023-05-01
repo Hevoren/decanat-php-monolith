@@ -1,3 +1,5 @@
+
+
 .main-flex-students {
     margin-top: 100px;
     width: 750px;
@@ -31,9 +33,8 @@
     grid-template-rows: 35px 35px 35px 35px 35px 35px 35px 35px 35px 35px;
 }
 
-.stud-list-wrapper div a {
+.stud-list-wrapper-item {
     text-decoration: none;
-    border-radius: 5px;
     display: inline-block;
     transition: transform 0.3s ease-in-out;
 }
@@ -42,7 +43,23 @@
     margin: 0;
 }
 
-.stud-list-wrapper div a:hover{
+.stud-list-wrapper-item:hover{
     color: #7abaca;
     transform: scale(1.1);
 }
+
+.student-add {
+    text-decoration: underline #7abaca;
+    text-decoration-thickness: 3px;
+    display: inline-block;
+    transition: transform 0.3s ease-in-out;
+}
+
+.student-add:hover {
+    color: #7abaca;
+    text-decoration: underline white;
+    text-decoration-thickness: 3px;
+    transform: scale(1.1);
+}
+
+/*  */

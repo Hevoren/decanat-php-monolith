@@ -13,6 +13,15 @@ class Students extends Model
     use HasFactory;
     public $timestamps = false;
 
+    protected $fillable = [
+        'name',
+        'surname',
+        'mid_name',
+        'birth_date',
+        'adress',
+        'group_id'
+    ];
+
     public function studentGroups():BelongsTo
     {
         return $this->belongsTo(Groups::class, 'group_id', 'group_id');
