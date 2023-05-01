@@ -5,9 +5,8 @@
         </div>
 
         <div class="wrapper">
-            <?php
-            foreach ($disciplines as $discipline){ ?>
-                <a class="card" href="<?= app()->route->getUrl('/pageDiscipline') . '?discipline_id=' .  $discipline->discipline_id ?> ">
+            <?php foreach ($disciplines as $discipline){ ?>
+                <a class="card" href="<?php app()->route->getUrl('/pageDiscipline') . '?discipline_id=' .  $discipline->discipline_id ?> ">
                     <?= $discipline->discipline_name ?>
                 </a>
             <?php } ?>

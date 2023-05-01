@@ -5,11 +5,14 @@
         </div>
 
         <div class="wrapper">
-            <?php
-            foreach ($groups as $group) {
-                echo '<a href="' . app()->route->getUrl('/pageGroup') . '?group_id=' .  $group->group_id . '" class="card">' . $group->group_name . '</a>';
-            }
-            ?>
+            <?php foreach ($groups as $group) { ?>
+                <a class="card"
+                   href="<?= app()->route->getUrl('/pageGroup') . '?group_id=' . $group->group_id ?>"><?= $group->group_name ?>
+                </a>
+            <?php } ?>
+            <a class="group-add" href="<?= app()->route->getUrl('/addGroup') ?>">
+                +
+            </a>
         </div>
     </div>
 </main>

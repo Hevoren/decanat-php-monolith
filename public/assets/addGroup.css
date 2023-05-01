@@ -1,15 +1,15 @@
-.main-flex-page-add-discipline {
+.main-flex-page-add-group {
     margin-top: 200px;
 }
 
-.card-page-add-discipline {
+.card-page-add-group {
     width: 350px;
     height: auto;
     display: flex;
     flex-direction: column;
 }
 
-.add-discipline-form {
+.add-group-form {
     display: flex;
     flex-direction: column;
     width: 350px;

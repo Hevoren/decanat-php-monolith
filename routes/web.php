@@ -24,6 +24,10 @@ Route::add('GET', '/addDiscipline', [Controller\Interactive::class, 'addDiscipli
     ->middleware('auth');
 Route::add('POST', '/addDiscipline', [Controller\Interactive::class, 'addDiscipline'])
     ->middleware('auth');
+Route::add('GET', '/addGroup', [Controller\Interactive::class, 'addGroupGet'])
+    ->middleware('auth');
+Route::add('POST', '/addGroup', [Controller\Interactive::class, 'addGroup'])
+    ->middleware('auth');
 Route::add(['GET', 'POST'], '/login', [Controller\AuthControl::class, 'login']);
 Route::add(['GET', 'POST'], '/register', [Controller\AuthControl::class, 'signup']);
 Route::add('GET', '/logout', [Controller\AuthControl::class, 'logout']);

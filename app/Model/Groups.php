@@ -13,6 +13,18 @@ class Groups extends Model
     use HasFactory;
     public $timestamps = false;
 
+    protected $fillable = [
+        'group_name',
+        'course_id',
+        'speciality_id',
+        'edcform_id'
+    ];
+
+    public function courses()
+    {
+        return $this->belongsTo(Courses::class, 'course_id');
+    }
+
     public function specialities()
     {
         return $this->belongsTo(Specialities::class, 'speciality_id');

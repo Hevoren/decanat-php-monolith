@@ -37,3 +37,26 @@
     border: 5px solid #7abaca;
     color: #7abaca;
 }
+
+
+.group-add {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    width: 250px;
+    height: 130px;
+    border-radius: 10px;
+    border: 2px solid white;
+    cursor: pointer;
+    transition: 0.2s;
+    text-decoration: none;
+    font-size: 52px;
+    color: #7abaca
+}
+
+.group-add:hover {
+    font-size: 60px;
+    border: 5px solid #7abaca;
+    color: #7abaca;
+}

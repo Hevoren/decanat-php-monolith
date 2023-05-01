@@ -16,7 +16,8 @@
     <link rel="stylesheet" href="/public/assets/page_group.css">
     <link rel="stylesheet" href="/public/assets/page_student.css">
     <link rel="stylesheet" href="/public/assets/cab.css">
-    <link rel="stylesheet" href="/public/assets/addDiscipline.css">
+    <link rel="stylesheet" href="/public/assets/addGroup.css">
+    <link rel="stylesheet" href="/public/assets/general.css">
     <link rel="stylesheet" href="/public/assets/general.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
