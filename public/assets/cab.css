@@ -1,77 +1,3 @@
-* {
-    margin: auto;
-    padding: auto;
-    box-sizing: border-box;
-    color: white;
-}
-
-
-body {
-    height: max-content;
-    max-width: 1920px;
-    font-family: 'Montserrat', sans-serif;
-}
-
-header {
-    background-color: rgb(17, 17, 17);
-    height: 7vh;
-}
-
-.header-flex {
-    height: 7vh;
-    display: flex;
-    flex-direction: row;
-}
-
-.list {
-    margin-left: 80px;
-    width: 450px;
-    display: flex;
-    flex-direction: row;
-}
-
-.title a {
-    font-size: 32px;
-    text-decoration: none;
-    text-align: center;
-}
-
-.tab-bar {
-    display: inline;
-}
-
-.tab-bar a {
-    font-size: 23px;
-    text-decoration: none;
-    transition: 0.5s;
-}
-
-.tab-bar a:hover {
-    color: #7abaca;
-}
-
-.bar-title {
-    text-align: center;
-    min-width: 50%;
-}
-
-.bar {
-    width: 50%;
-}
-
-.title {
-    display: inline;
-}
-
-/*  */
-
-main {
-    background-color: black;
-    height: 88vh;
-    display: flex;
-    flex-direction: column;
-}
-
 .main-flex-cab {
     margin-top: 100px;
     width: 750px;
@@ -89,6 +15,7 @@ main {
 .left-column-cab {
     width: 50%;
     margin: 0;
+    border-right: solid 2px white;
     display: flex;
     flex-direction: column;
 }
@@ -140,19 +67,4 @@ main {
     color: white;
     transform: scale(1.1);
     cursor: pointer;
-}
-
-
-/*  */
-
-footer {
-    background-color: black;
-}
-
-footer div {
-    background-color: rgb(17, 17, 17);
-    height: 5vh;
-    display: flex;
-    flex-direction: row;
-    font-size: 16px;
 }

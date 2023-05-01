@@ -1,59 +1,4 @@
-* {
-    margin: auto;
-    padding: auto;
-    box-sizing: border-box;
-    color: white;
-}
 
-
-body {
-    height: max-content;
-    max-width: 1920px;
-    font-family: 'Montserrat', sans-serif;
-}
-
-header {
-    background-color: rgb(17, 17, 17);
-    height: 7vh;
-}
-
-header div {
-    height: 7vh;
-    display: flex;
-    flex-direction: row;
-}
-
-.title a {
-    font-size: 32px;
-    text-decoration: none;
-    text-align: center;
-}
-
-.tab-bar a {
-    font-size: 23px;
-    text-decoration: none;
-    transition: 0.5s;
-}
-
-.tab-bar a:hover {
-    color: #7abaca;
-}
-
-.bar-title {
-    text-align: center;
-    min-width: 50%;
-}
-
-.bar {
-    width: 50%;
-}
-
-/*  */
-
-main {
-    background-color: black;
-    height: 88vh;
-}
 
 .login-form {
     display: flex;
@@ -117,15 +62,3 @@ main {
 }
 
 /*  */
-
-footer {
-    background-color: black;
-}
-
-footer div {
-    background-color: rgb(17, 17, 17);
-    height: 5vh;
-    display: flex;
-    flex-direction: row;
-    font-size: 16px;
-}

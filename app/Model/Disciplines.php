@@ -16,6 +16,13 @@ class Disciplines extends Model
 
     public $timestamps = false;
 
+    protected $fillable = [
+        'discipline_name',
+        'semestr_id',
+        'control_id',
+        'hours'
+    ];
+
     public function controlDisciplines():BelongsTo
     {
         return $this->belongsTo(Controls::class, 'control_id', 'control_id');

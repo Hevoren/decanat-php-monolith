@@ -1,0 +1,154 @@
+* {
+    margin: auto;
+    padding: auto;
+    box-sizing: border-box;
+    color: white;
+}
+
+
+body {
+    height: max-content;
+    max-width: 1920px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+header {
+    background-color: rgb(17, 17, 17);
+    height: 7vh;
+}
+
+.header-flex {
+    height: 7vh;
+    display: flex;
+    flex-direction: row;
+}
+
+.list {
+    margin-left: 80px;
+    width: 450px;
+    display: flex;
+    flex-direction: row;
+}
+
+.title a {
+    font-size: 32px;
+    text-decoration: none;
+    text-align: center;
+}
+
+.tab-bar {
+    display: inline;
+}
+
+.tab-bar a {
+    font-size: 23px;
+    text-decoration: none;
+    transition: 0.5s;
+}
+
+.tab-bar a:hover {
+    color: #7abaca;
+}
+
+.bar-title {
+    text-align: center;
+    min-width: 50%;
+}
+
+.bar {
+    width: 50%;
+}
+
+.title {
+    display: inline;
+}
+
+/*  */
+
+main {
+    background-color: black;
+    height: 88vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-flex-page-add-discipline {
+    margin-top: 200px;
+}
+
+.card-page-add-discipline {
+    width: 350px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.add-discipline-form {
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+}
+
+.form-block {
+    margin: auto;
+    width: 325px;
+}
+
+.form-block-title {
+    text-align: center;
+    font-size: 32px;
+}
+
+
+.input-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-type {
+    width: 100%;
+    border-radius: 10px;
+    border: 2px solid #91bfcb;
+    box-shadow: none;
+    margin-top: 10px;
+    padding: 10px;
+    color: black;
+}
+
+.input-type:focus {
+    border: 2px solid black;
+    box-shadow: none;
+}
+
+.input-submit {
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    margin-top: 10px;
+    padding: 10px;
+    width: 100%;
+    background-color: #81bece;
+    transition: 0.5s;
+}
+
+.input-submit:hover {
+    background-color: #6296a3;
+}
+
+.option-input {
+    color: black;
+}
+
+/*  */
+
+footer {
+    background-color: black;
+}
+
+footer div {
+    background-color: rgb(17, 17, 17);
+    height: 5vh;
+    display: flex;
+    flex-direction: row;
+    font-size: 16px;
+}

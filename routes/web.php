@@ -18,7 +18,11 @@ Route::add('GET', '/pageStudent', [Controller\Site::class, 'pageStudent'])
     ->middleware('auth');
 Route::add('GET', '/cab', [Controller\Site::class, 'cab'])
     ->middleware('auth');
-Route::add( 'POST', '/cab', [Controller\Site::class, 'addUser'])
+Route::add( 'POST', '/cab', [Controller\Site::class, 'controlUser'])
+    ->middleware('auth');
+Route::add('GET', '/addDiscipline', [Controller\Interactive::class, 'addDisciplineGet'])
+    ->middleware('auth');
+Route::add('POST', '/addDiscipline', [Controller\Interactive::class, 'addDiscipline'])
     ->middleware('auth');
 Route::add(['GET', 'POST'], '/login', [Controller\AuthControl::class, 'login']);
 Route::add(['GET', 'POST'], '/register', [Controller\AuthControl::class, 'signup']);

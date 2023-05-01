@@ -6,10 +6,14 @@
 
         <div class="wrapper">
             <?php
-            foreach ($disciplines as $discipline){
-                echo '<a href="' . app()->route->getUrl('/pageDiscipline') . '?discipline_id=' .  $discipline->discipline_id . '" class="card">' . $discipline->discipline_name . '</a>';
-            }
-            ?>
+            foreach ($disciplines as $discipline){ ?>
+                <a class="card" href="<?= app()->route->getUrl('/pageDiscipline') . '?discipline_id=' .  $discipline->discipline_id ?> ">
+                    <?= $discipline->discipline_name ?>
+                </a>
+            <?php } ?>
+            <a class="card-add" href="<?= app()->route->getUrl('/addDiscipline') ?>">
+                +
+            </a>
         </div>
     </div>
 </main>

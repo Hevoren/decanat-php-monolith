@@ -3,7 +3,7 @@
         <div class="form-block">
             <p class="form-block-title">Sign Up</p>
             <p style="color: red; margin-top: 10px"><?= $message ?? ''; ?></p>
-            <p style="color: green; margin-top: 10px; text-align: center"><?= $messageE ?? ''; ?></p>
+            <p style="color: #005e00; margin-top: 10px; text-align: center"><?= $messageE ?? ''; ?></p>
             <form action="" method="post">
                 <div class="input-wrapper">
                     <input class="input-type" type="text" placeholder="Name" name="name">

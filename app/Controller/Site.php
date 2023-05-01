@@ -64,7 +64,7 @@ class Site
         return new View('site.cab', ['users' => $users, 'activeUsers' => $activeUsers]);
     }
 
-    public function addUser(Request $request): string
+    public function controlUser(Request $request): string
     {
         $userId = $request->get('id');
         $tempUser = TempUsers::find($userId);
