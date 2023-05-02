@@ -7,6 +7,10 @@
                         <?= $discipline->discipline_name ?>
                     </p>
                 <?php } ?>
+                <div class="disc-tt">
+                    <a class="disc-ttt">Delete</a>
+                    <a class="disc-ttt">Edit</a>
+                </div>
             </div>
             <div class="discipline-info">
                 <div class="right-column">

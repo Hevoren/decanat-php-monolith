@@ -8,6 +8,8 @@ use Model\Controls;
 use Model\Courses;
 use Model\Disciplines;
 use Model\EducationForms;
+use Model\GradeCards;
+use Model\Grades;
 use Model\GroupDiscipline;
 use Model\PageDisciplines;
 use Model\Groups;
@@ -90,7 +92,7 @@ class Interactive
     public function addStudent(Request $request): string
     {
         if ($request->method === 'POST') {
-            $students = new Students([
+            $students = Students::create([
                 'name' => $request->name,
                 'surname' => $request->surname,
                 'mid_name' => $request->mid_name,
@@ -98,9 +100,31 @@ class Interactive
                 'adress' => $request->adress,
                 'group_id' => $request->group_id
             ]);
-            $students->save();
             app()->route->redirect('/student?group_id=' . $request->group_id);
         }
         return new View('site.student');
     }
+
+    public function addGradeGet(): string
+    {
+        $disciplines = Disciplines::all();
+        $controls = Controls::all();
+        $grades = Grades::all();
+        return new View('site.addGrade', ['controls' => $controls, 'grades' => $grades, 'disciplines' => $disciplines]);
+    }
+
+    public function addGrade(Request $request): string
+    {
+        if($request->method === 'POST') {
+            $gradeStudent = GradeCards::create([
+                'student_id' => $request->student_id,
+                'discipline_id' => $request->discipline_id,
+                'control_id' => $request->control_id,
+                'grade_id' => $request->grade_id
+            ]);
+            app()->route->redirect('/pageStudent?student_id=' . $request->student_id);
+        }
+        return new View('site.student');
+    }
+
 }

@@ -14,6 +14,14 @@ class GradeCards extends Model
     use HasFactory;
     public $timestamps = false;
 
+    protected $fillable = [
+        'student_id',
+        'discipline_id',
+        'grade_id',
+        'control_id',
+        'hours'
+    ];
+
     public function student()
     {
         return $this->belongsTo(Students::class, 'student_id', 'student_id');

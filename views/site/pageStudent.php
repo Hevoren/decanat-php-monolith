@@ -80,7 +80,14 @@
         <div class="grade-card">
             <div class="grade-card-title">
                 <p class="grade-card-title-item">Grade Card</p>
+                <p class="grade-card-title-item">
+                    <?php foreach ($students as $student) { ?>
+                        <a href="<?= app()->route->getUrl('/addGrade') . '?student_id=' . $student->student_id ?>"
+                           class="grade-card-title-item-add">Add</a>
+                    <?php } ?>
+                </p>
             </div>
+
             <div class="grade-card-flex">
                 <div class="flex-disc">
                     <?php foreach ($students as $student) { ?>
@@ -117,13 +124,12 @@
                 </div>
                 <div class="flex-grade">
                     <?php foreach ($students as $student) { ?>
-                    <?php foreach ($student->gradeCards as $discipline) { ?>
-                    <div>
-                        <p>
-                            <?php echo $discipline->grade->grade ?>
-                        </p>
-
-                    </div>
+                        <?php foreach ($student->gradeCards as $discipline) { ?>
+                            <div>
+                                <p>
+                                    <?php echo $discipline->grade->grade ?>
+                                </p>
+                            </div>
                         <?php } ?>
                     <?php } ?>
                 </div>

@@ -71,19 +71,35 @@
     border: 2px solid white;
     border-radius: 10px;
     width: 420px;
-    height: 180px;
+    min-height: 180px;
+    height: fit-content;
     display: flex;
     flex-direction: column;
 }
 
 .grade-card-title {
     margin: 0;
-    height: 10%;
+    height: 40px;
     font-size: 18px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .grade-card-title-item {
     margin: 10px 15px;
+}
+
+.grade-card-title-item-add{
+    text-decoration: none;
+    display: inline-block;
+    transition: transform 0.3s ease-in-out;
+}
+
+.grade-card-title-item-add:hover {
+    cursor: pointer;
+    color: #7abaca;
+    transform: scale(1.1);
 }
 
 .grade-card-flex {
