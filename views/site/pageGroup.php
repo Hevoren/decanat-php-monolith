@@ -8,7 +8,7 @@
                     </p>
                 <?php } ?>
                 <div class="disc-tt">
-                    <a href="<?= app()->route->getUrl('/confirmation') . '?group_id=' . $group->group_id ?>" class="disc-ttt">Delete</a>
+                    <a href="<?= app()->route->getUrl('/confirmationDelGroup') . '?group_id=' . $group->group_id ?>" class="disc-ttt">Delete</a>
                     <a href="<?= app()->route->getUrl('/pageGroupEdit') . '?group_id=' . $group->group_id ?>" class="disc-ttt">Edit</a>
                 </div>
             </div>

@@ -127,7 +127,7 @@ class Interactive
         return new View('site.student');
     }
 
-    public function confirmation(Request $request):string
+    public function confirmationGroup(Request $request):string
     {
         if ($request->method === 'POST') {
             $student = Students::where('group_id', $request->group_id);
@@ -158,10 +158,10 @@ class Interactive
                 }
             }
         }
-        return new View('site.confirmation');
+        return new View('site.confirmationDelGroup');
     }
 
-    public function editPageStudentGet(Request $request): string
+    public function editPageGroupGet(Request $request): string
     {
         $specialities = Specialities::all();
         $courses = Courses::all();
@@ -171,7 +171,7 @@ class Interactive
         return new View('site.pageGroupEdit', ['groups' => $groups, 'specialities' => $specialities, 'courses' => $courses, 'edcforms' => $edcforms, 'disciplines' => $disciplines]);
     }
 
-    public function editPageStudent(Request $request): string
+    public function editPageGroup(Request $request): string
     {
         $groupId = Groups::where('group_id', $request->group_id);
         if ($request->method === 'POST') {
@@ -182,6 +182,62 @@ class Interactive
                 'edcform_id' => $request->edcform_id
             ]);
             app()->route->redirect('/pageGroup?group_id=' . $request->group_id);
+        }
+    }
+
+    public function confirmationDiscipline(Request $request): string
+    {
+        if ($request->method === 'POST'){
+            $gradeCard = GradeCards::where('discipline_id', $request->discipline_id);
+            $groupDisc = GroupDiscipline::where('discipline_id', $request->discipline_id)->first();
+            $discipline = Disciplines::where('discipline_id', $request->discipline_id)->first();
+            if((isset($groupDisc) === true) && (isset($gradeCard) === true)){
+                $gradeCard->delete();
+                $groupDisc->delete();
+                $discipline->delete();
+                app()->route->redirect('/discipline');
+            }elseif (isset($groupDisc) === false){
+                if(isset($gradeCard) === true){
+                    $gradeCard->delete();
+                    $discipline->delete();
+                    app()->route->redirect('/discipline');
+                }elseif (isset($gradeCard) === false){
+                    $discipline->delete();
+                    app()->route->redirect('/discipline');
+                }
+            }elseif(isset($groupDisc) === true){
+                if(isset($gradeCard) === true){
+                    $gradeCard->delete();
+                    $discipline->delete();
+                    app()->route->redirect('/discipline');
+                }elseif (isset($gradeCard) === false){
+                    $discipline->delete();
+                    app()->route->redirect('/discipline');
+                }
+            }
+        }
+        return new View('site.confirmationDelDiscipline');
+    }
+
+    public function editPageDisciplineGet(Request $request): string
+    {
+        $semesters = Semestrs::all();
+        $controls = Controls::all();
+        $disciplines = Disciplines::where('discipline_id', $request->discipline_id)->first();
+        return new View('site.pageDisciplineEdit', ['semesters' => $semesters, 'controls' => $controls, 'disciplines' => $disciplines]);
+    }
+
+    public function editPageDiscipline(Request $request): string
+    {
+        $disciplineId = Disciplines::where('discipline_id', $request->discipline_id);
+        if ($request->method === 'POST') {
+            $disciplineId->update([
+                'discipline_name' => $request->discipline_name,
+                'semestr_id' => $request->semestr_id,
+                'control_id' => $request->control_id,
+                'hours' => $request->hours
+            ]);
+            app()->route->redirect('/pageDiscipline?discipline_id=' . $request->discipline_id);
         }
     }
 }

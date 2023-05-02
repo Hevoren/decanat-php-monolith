@@ -67,14 +67,26 @@ Route::add('POST', '/addGrade', [Controller\Interactive::class, 'addGrade'])
     ->middleware('auth');
 
 
-//Подтверждение удаления
-Route::add('GET', '/confirmation', [Controller\Interactive::class, 'confirmation'])
+//Подтверждение удаления группы
+Route::add('GET', '/confirmationDelGroup', [Controller\Interactive::class, 'confirmationGroup'])
     ->middleware('auth');
-Route::add('POST', '/confirmation', [Controller\Interactive::class, 'confirmation'])
+Route::add('POST', '/confirmationDelGroup', [Controller\Interactive::class, 'confirmationGroup'])
     ->middleware('auth');
 
 //Редактирование группы
-Route::add('GET', '/pageGroupEdit', [Controller\Interactive::class, 'editPageStudentGet'])
+Route::add('GET', '/pageGroupEdit', [Controller\Interactive::class, 'editPageGroupGet'])
     ->middleware('auth');
-Route::add('POST', '/pageGroupEdit', [Controller\Interactive::class, 'editPageStudent'])
+Route::add('POST', '/pageGroupEdit', [Controller\Interactive::class, 'editPageGroup'])
+    ->middleware('auth');
+
+//Подтверждение удаления дисциплины
+Route::add('GET', '/confirmationDelDiscipline', [Controller\Interactive::class, 'confirmationDiscipline'])
+    ->middleware('auth');
+Route::add('POST', '/confirmationDelDiscipline', [Controller\Interactive::class, 'confirmationDiscipline'])
+    ->middleware('auth');
+
+//Редактирование дисциплины
+Route::add('GET', '/pageDisciplineEdit', [Controller\Interactive::class, 'editPageDisciplineGet'])
+    ->middleware('auth');
+Route::add('POST', '/pageDisciplineEdit', [Controller\Interactive::class, 'editPageDiscipline'])
     ->middleware('auth');

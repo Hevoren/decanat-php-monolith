@@ -8,8 +8,8 @@
                     </p>
                 <?php } ?>
                 <div class="disc-tt">
-                    <a href="#" class="disc-ttt">Delete</a>
-                    <a href="#" class="disc-ttt">Edit</a>
+                    <a href="<?= app()->route->getUrl('/confirmationDelDiscipline') . '?discipline_id=' . $discipline->discipline_id ?>" class="disc-ttt">Delete</a>
+                    <a href="<?= app()->route->getUrl('/pageDisciplineEdit') . '?discipline_id=' . $discipline->discipline_id ?>" class="disc-ttt">Edit</a>
                 </div>
             </div>
             <div class="discipline-info">
