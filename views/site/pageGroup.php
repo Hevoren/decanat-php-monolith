@@ -7,19 +7,22 @@
                         <?= $group->group_name ?>
                     </p>
                 <?php } ?>
+                <div class="disc-tt">
+                    <a class="disc-ttt">Delete</a>
+                    <a class="disc-ttt">Edit</a>
+                </div>
             </div>
             <div class="group-info">
-                <div class="right-column">
+                <div class="right-column-group">
                     <div>
                         <p>Speciality:</p>
                         <p>Course:</p>
                         <p>Form:</p>
                     </div>
                 </div>
-                <div class="left-column">
+                <div class="left-column-group">
                     <?php foreach ($groups as $group) { ?>
                         <div>
-
                             <p><?= $group->specialityGroup->speciality_name ?></p>
                             <p><?= $group->courseGroup->course ?></p>
                             <p><?= $group->educationGroup->edcform_name ?></p>
@@ -40,12 +43,10 @@
             </div>
             <div class="card-footer">
                 <?php foreach ($groups as $group) { ?>
-                    <?php foreach ($group->groupDisc as $discipline) { ?>
-                        <p><a href="<?= app()->route->getUrl('/student') . '?group_id=' . $discipline->pivot->group_id ?>">Students</a></p>
-                        <?php break ?>
-                    <?php } ?>
+                    <p>
+                        <a href="<?= app()->route->getUrl('/student') . '?group_id=' . $group->group_id ?>">Students</a>
+                    </p>
                 <?php } ?>
-
             </div>
         </div>
     </div>

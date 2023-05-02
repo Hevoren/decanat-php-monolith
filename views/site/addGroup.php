@@ -8,23 +8,29 @@
                     <p style="color: #005e00; margin-top: 10px; text-align: center"><?= $messageE ?? ''; ?></p>
                     <form action="" method="post">
                         <div class="input-wrapper">
-                            <input class="input-type" type="text" placeholder="Group name" name="group_name">
-                            <select class="input-type" name="speciality_id">
+                            <input required class="input-type" type="text" placeholder="Group name" name="group_name">
+                            <select required class="input-type" name="speciality_id">
                                 <?php foreach ($specialities as $speciality) { ?>
-                                    <option class="option-input"
+                                    <option required class="option-input"
                                             value="<?= $speciality->speciality_id ?>"><?= $speciality->speciality_name ?></option>
                                 <?php } ?>
                             </select>
-                            <select class="input-type" name="course_id">
+                            <select required class="input-type" name="course_id">
                                 <?php foreach ($courses as $course) { ?>
-                                    <option class="option-input"
+                                    <option required class="option-input"
                                             value="<?= $course->course_id ?>"><?= $course->course ?></option>
                                 <?php } ?>
                             </select>
-                            <select class="input-type" name="edcform_id">
+                            <select required class="input-type" name="edcform_id">
                                 <?php foreach ($edcforms as $edcform) { ?>
                                     <option class="option-input"
                                             value="<?= $edcform->edcform_id ?>"><?= $edcform->edcform_name ?></option>
+                                <?php } ?>
+                            </select>
+                            <select required class="input-type" name="discipline_id">
+                                <?php foreach ($disciplines as $discipline) { ?>
+                                    <option class="option-input"
+                                            value="<?= $discipline->discipline_id ?>"><?= $discipline->discipline_name ?></option>
                                 <?php } ?>
                             </select>
                             <input class="input-submit" type="submit" value="Add">

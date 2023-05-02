@@ -3,9 +3,7 @@
         <div class="main-flex-students">
             <div class="stud-list">
                 <div class="students-title">
-                    <?php foreach ($groups
-
-                    as $group) { ?>
+                    <?php foreach ($groups as $group) { ?>
                     <p class="stud-t">
                         <?= $group->group_name ?>
                     </p>

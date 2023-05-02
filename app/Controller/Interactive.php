@@ -2,11 +2,13 @@
 
 namespace Controller;
 
+use Couchbase\Group;
 use http\Client\Curl\User;
 use Model\Controls;
 use Model\Courses;
 use Model\Disciplines;
 use Model\EducationForms;
+use Model\GroupDiscipline;
 use Model\PageDisciplines;
 use Model\Groups;
 use Model\PageGroups;
@@ -25,20 +27,25 @@ class Interactive
         $semestrs = Semestrs::all();
         $controls = Controls::all();
         $disciplines = Disciplines::all();
+        $groups = Groups::all();
 
-        return new View('site.addDiscipline', ['disciplines' => $disciplines, 'controls' => $controls, 'semestrs' => $semestrs]);
+        return new View('site.addDiscipline', ['disciplines' => $disciplines, 'controls' => $controls, 'semestrs' => $semestrs, 'groups' => $groups]);
     }
 
     public function addDiscipline(Request $request): string
     {
         if ($request->method === 'POST') {
-            $disciplines = new Disciplines([
+            $disciplines = Disciplines::create([
                 'discipline_name' => $request->discipline_name,
                 'semestr_id' => $request->semestr_id,
                 'control_id' => $request->control_id,
                 'hours' => $request->hours
             ]);
-            $disciplines->save();
+            $tempId = $disciplines->discipline_id;
+            $groupDisc = GroupDiscipline::create([
+                'group_id' => $request->group_id,
+                'discipline_id' => $tempId
+            ]);
             app()->route->redirect('/discipline');
         }
         return new View('site.discipline');
@@ -49,21 +56,27 @@ class Interactive
         $specialities = Specialities::all();
         $courses = Courses::all();
         $edcforms = EducationForms::all();
+        $disciplines = Disciplines::all();
 
-
-        return new View('site.addGroup', ['specialities' => $specialities, 'courses' => $courses, 'edcforms' => $edcforms]);
+        return new View('site.addGroup', ['specialities' => $specialities, 'courses' => $courses, 'edcforms' => $edcforms, 'disciplines' => $disciplines]);
     }
 
     public function addGroup(Request $request): string
     {
+
         if ($request->method === 'POST') {
-            $groups = new Groups([
+            $groups = Groups::create([
                 'group_name' => $request->group_name,
                 'speciality_id' => $request->speciality_id,
                 'course_id' => $request->course_id,
                 'edcform_id' => $request->edcform_id,
             ]);
-            $groups->save();
+
+            $tempId = $groups->group_id;
+            $groupDisc = GroupDiscipline::create([
+                'group_id' => $tempId,
+                'discipline_id' => $request->discipline_id
+            ]);
             app()->route->redirect('/group');
         }
         return new View('site.group');
