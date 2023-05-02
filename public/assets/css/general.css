@@ -16,11 +16,6 @@ body {
     scrollbar-width: none;
 }
 
-body::-webkit-scrollbar {
-    width: 5px;
-    background-color: #000;
-}
-
 body::-webkit-scrollbar-thumb {
     background-color: #fff;
     border-radius: 10px;
@@ -31,8 +26,9 @@ body::-webkit-scrollbar-thumb:hover {
     background-color: #7abaca;
 }
 
-/* Позиционируем скролл справа */
 body::-webkit-scrollbar {
+    width: 5px;
+    background-color: #000;
     position: fixed;
     top: 0;
     right: 0;

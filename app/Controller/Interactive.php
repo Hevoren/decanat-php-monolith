@@ -127,4 +127,61 @@ class Interactive
         return new View('site.student');
     }
 
+    public function confirmation(Request $request):string
+    {
+        if ($request->method === 'POST') {
+            $student = Students::where('group_id', $request->group_id);
+            $groupDisc = GroupDiscipline::where('group_id', $request->group_id)->first();
+            $group = Groups::where('group_id', $request->group_id)->first();
+            if((isset($groupDisc) === true) && (isset($student) === true)){
+                $student->delete();
+                $groupDisc->delete();
+                $group->delete();
+                app()->route->redirect('/group');
+            }elseif (isset($groupDisc) === false){
+                if(isset($student) === true){
+                    $student->delete();
+                    $group->delete();
+                    app()->route->redirect('/group');
+                }elseif (isset($student) === false){
+                    $group->delete();
+                    app()->route->redirect('/group');
+                }
+            }elseif(isset($groupDisc) === true){
+                if(isset($student) === true){
+                    $student->delete();
+                    $group->delete();
+                    app()->route->redirect('/group');
+                }elseif (isset($student) === false){
+                    $group->delete();
+                    app()->route->redirect('/group');
+                }
+            }
+        }
+        return new View('site.confirmation');
+    }
+
+    public function editPageStudentGet(Request $request): string
+    {
+        $specialities = Specialities::all();
+        $courses = Courses::all();
+        $edcforms = EducationForms::all();
+        $disciplines = Disciplines::all();
+        $groups = Groups::where('group_id', $request->group_id)->first();
+        return new View('site.pageGroupEdit', ['groups' => $groups, 'specialities' => $specialities, 'courses' => $courses, 'edcforms' => $edcforms, 'disciplines' => $disciplines]);
+    }
+
+    public function editPageStudent(Request $request): string
+    {
+        $groupId = Groups::where('group_id', $request->group_id);
+        if ($request->method === 'POST') {
+            $groupId->update([
+                'group_name' => $request->group_name,
+                'course_id' => $request->course_id,
+                'speciality_id' => $request->speciality_id,
+                'edcform_id' => $request->edcform_id
+            ]);
+            app()->route->redirect('/pageGroup?group_id=' . $request->group_id);
+        }
+    }
 }

@@ -33,41 +33,25 @@
 }
 
 .disc-ttt {
+    display: inline-block;
+    transition: transform 0.3s ease-in-out;
+    text-decoration: none;
+    width: 50%;
     margin-left: 5px;
-    text-align: right;
+    text-align: left;
 }
 
-.disc-t-input[type="submit"] {
-    border: none;
-    color: white;
-    background: none;
-    border-radius: 15px;
-    display: inline-block;
-    transition: transform 0.3s ease-in-out;
+.disc-ttt:nth-child(1) {
+    margin-left: 0px;
 }
 
-.disc-t-input2[type="submit"] {
-    border: none;
-    color: white;
-    background: none;
-    border-radius: 15px;
-    display: inline-block;
-    transition: transform 0.3s ease-in-out;
-}
-
-.disc-t-input[type="submit"]:hover  {
-    cursor: pointer;
-    border: none;
+.disc-ttt:nth-child(1):hover {
     color: red;
-    background: none;
     transform: scale(1.1);
 }
 
-.disc-t-input2[type="submit"]:hover {
-    cursor: pointer;
-    border: none;
+.disc-ttt:nth-child(2):hover {
     color: #7abaca;
-    background: none;
     transform: scale(1.1);
 }
 

@@ -8,8 +8,8 @@
                     </p>
                 <?php } ?>
                 <div class="disc-tt">
-                    <form class="disc-ttt"><input class="disc-t-input" type="submit" value="Delete"></form>
-                    <form class="disc-ttt"><input class="disc-t-input2" type="submit" value="Edit"></form>
+                    <a href="#" class="disc-ttt">Delete</a>
+                    <a href="#" class="disc-ttt">Edit</a>
                 </div>
             </div>
             <div class="discipline-info">

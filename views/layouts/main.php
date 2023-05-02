@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="/public/assets/css/addGroup.css">
     <link rel="stylesheet" href="/public/assets/css/addDiscipline.css">
     <link rel="stylesheet" href="/public/assets/css/general.css">
+    <link rel="stylesheet" href="/public/assets/css/confirmation.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
     </style>

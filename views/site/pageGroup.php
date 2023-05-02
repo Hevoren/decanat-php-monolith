@@ -8,8 +8,8 @@
                     </p>
                 <?php } ?>
                 <div class="disc-tt">
-                    <form class="disc-ttt"><input class="disc-t-input" type="submit" value="Delete"></form>
-                    <form class="disc-ttt"><input class="disc-t-input2" type="submit" value="Edit"></form>
+                    <a href="<?= app()->route->getUrl('/confirmation') . '?group_id=' . $group->group_id ?>" class="disc-ttt">Delete</a>
+                    <a href="<?= app()->route->getUrl('/pageGroupEdit') . '?group_id=' . $group->group_id ?>" class="disc-ttt">Edit</a>
                 </div>
             </div>
             <div class="group-info">

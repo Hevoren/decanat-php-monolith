@@ -35,7 +35,7 @@
                             </label>
 
                             <label class="input-type">
-                                <div class="input-type-label">Course:</div>
+                                <div class="input-type-label">Education:</div>
                                 <select required class="input-type-item" name="edcform_id">.
                                     <option selected value="">choice</option>
                                     <?php foreach ($edcforms as $edcform) { ?>
@@ -46,7 +46,7 @@
                             </label>
 
                             <label class="input-type">
-                                <div class="input-type-label">Course:</div>
+                                <div class="input-type-label">Discipline:</div>
                                 <select required class="input-type-item" name="discipline_id">
                                     <option selected value="">choice</option>
                                     <?php foreach ($disciplines as $discipline) { ?>
