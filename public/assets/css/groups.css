@@ -1,16 +1,16 @@
-.main-flex-groups{
+.main-flex-groups {
     margin-top: 100px;
 }
 
-.div-main-title-group{
+.div-main-title-group {
     text-align: center;
 }
 
-.main-title{
+.main-title {
     font-size: 32px;
 }
 
-.wrapper{
+.wrapper {
     margin-top: 50px;
     display: grid;
     grid-template-columns: 270px 270px 270px 270px;
@@ -32,12 +32,11 @@
     text-decoration: none;
 }
 
-.card:hover{
+.card:hover {
     font-size: 18px;
     border: 5px solid #7abaca;
     color: #7abaca;
 }
-
 
 .group-add {
     display: flex;

@@ -8,8 +8,8 @@
                     </p>
                 <?php } ?>
                 <div class="disc-tt">
-                    <a class="disc-ttt">Delete</a>
-                    <a class="disc-ttt">Edit</a>
+                    <form class="disc-ttt"><input class="disc-t-input" type="submit" value="Delete"></form>
+                    <form class="disc-ttt"><input class="disc-t-input2" type="submit" value="Edit"></form>
                 </div>
             </div>
             <div class="group-info">

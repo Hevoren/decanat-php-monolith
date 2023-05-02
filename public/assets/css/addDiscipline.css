@@ -1,22 +1,28 @@
-.login-form {
-    display: flex;
-    flex-direction: column;
-    width: 400px;
+.main-flex-page-add-discipline {
     margin-top: 200px;
 }
 
+.card-page-add-discipline {
+    width: 350px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.add-discipline-form {
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+}
+
 .form-block {
-    margin: 0;
-    width: 400px;
+    margin: auto;
+    width: 325px;
 }
 
 .form-block-title {
     text-align: center;
     font-size: 32px;
-}
-
-.form-block form {
-    margin-top: 10px;
 }
 
 .input-wrapper {
@@ -30,8 +36,30 @@
     border: 2px solid #91bfcb;
     box-shadow: none;
     margin-top: 10px;
-    padding: 10px;
-    color: black;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+}
+
+.input-type-label {
+    text-align: left;
+    width: 30%;
+}
+
+.input-type-item {
+    background: none;
+    border: none;
+    color: white;
+    text-align: center;
+    width: 70%;
+}
+
+.input-type-item-1 {
+    background: none;
+    border: none;
+    color: white;
+    text-align: left;
+    width: 100%;
 }
 
 .input-type:focus {
@@ -54,7 +82,6 @@
     background-color: #6296a3;
 }
 
-.offer-a {
-    margin-top: 20px;
-    color: #7abaca;
+.option-input {
+    color: black;
 }

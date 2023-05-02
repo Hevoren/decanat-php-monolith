@@ -1,6 +1,5 @@
 * {
     margin: auto;
-    padding: auto;
     box-sizing: border-box;
     color: white;
 }
@@ -13,6 +12,31 @@ body {
     height: max-content;
     max-width: 1920px;
     font-family: 'Montserrat', sans-serif;
+    overflow-y: scroll;
+    scrollbar-width: none;
+}
+
+body::-webkit-scrollbar {
+    width: 5px;
+    background-color: #000;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #fff;
+    border-radius: 10px;
+    width: 5px;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    background-color: #7abaca;
+}
+
+/* Позиционируем скролл справа */
+body::-webkit-scrollbar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
 }
 
 header {

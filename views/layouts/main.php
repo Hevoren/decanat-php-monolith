@@ -8,18 +8,18 @@
 <!--    <link rel="stylesheet" href="../php-framework/public/assests/login.css">-->
 <!--    <link rel="stylesheet" href="/public/assets/login.css">-->
 
-    <link rel="stylesheet" href="../php-framework/public/assets/login.css">
-    <link rel="stylesheet" href="../php-framework/public/assets/main.css">
-    <link rel="stylesheet" href="../php-framework/public/assets/disciplines.css">
-    <link rel="stylesheet" href="../php-framework/public/assets/students.css">
-    <link rel="stylesheet" href="../php-framework/public/assets/page_discipline.css">
-    <link rel="stylesheet" href="../php-framework/public/assets/groups.css">
-    <link rel="stylesheet" href="../php-framework/public/assets/page_group.css">
-    <link rel="stylesheet" href="../php-framework/public/assets/page_student.css">
-    <link rel="stylesheet" href="../php-framework/public/assets/cab.css">
-    <link rel="stylesheet" href="../php-framework/public/assets/addGroup.css">
-    <link rel="stylesheet" href="../php-framework/public/assets/addDiscipline.css">
-    <link rel="stylesheet" href="../php-framework/public/assets/general.css">
+    <link rel="stylesheet" href="/public/assets/css/login.css">
+    <link rel="stylesheet" href="/public/assets/css/main.css">
+    <link rel="stylesheet" href="/public/assets/css/disciplines.css">
+    <link rel="stylesheet" href="/public/assets/css/students.css">
+    <link rel="stylesheet" href="/public/assets/css/page_discipline.css">
+    <link rel="stylesheet" href="/public/assets/css/groups.css">
+    <link rel="stylesheet" href="/public/assets/css/page_group.css">
+    <link rel="stylesheet" href="/public/assets/css/page_student.css">
+    <link rel="stylesheet" href="/public/assets/css/cab.css">
+    <link rel="stylesheet" href="/public/assets/css/addGroup.css">
+    <link rel="stylesheet" href="/public/assets/css/addDiscipline.css">
+    <link rel="stylesheet" href="/public/assets/css/general.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
     </style>

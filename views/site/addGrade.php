@@ -10,24 +10,39 @@
                     <form action="" method="post">
                         <div class="input-wrapper">
                             <input type="hidden" name="student_id" value="<?= $studentId ?>">
-                            <select required class="input-type" name="discipline_id">
-                                <?php foreach ($disciplines as $discipline) { ?>
-                                    <option class="option-input"
-                                            value="<?= $discipline->discipline_id ?>"><?= $discipline->discipline_name ?></option>
-                                <?php } ?>
-                            </select>
-                            <select required class="input-type" name="control_id">
-                                <?php foreach ($controls as $control) { ?>
-                                    <option class="option-input"
-                                            value="<?= $control->control_id ?>"><?= $control->control_name ?></option>
-                                <?php } ?>
-                            </select>
-                            <select required class="input-type" name="grade_id">
-                                <?php foreach ($grades as $grade) { ?>
-                                    <option class="option-input"
-                                            value="<?= $grade->grade_id ?>"><?= $grade->grade ?></option>
-                                <?php } ?>
-                            </select>
+                            <label class="input-type">
+                                <div class="input-type-label">Discipline:</div>
+                                <select required class="input-type-item" name="discipline_id">
+                                    <option selected value="">choice</option>
+                                    <?php foreach ($disciplines as $discipline) { ?>
+                                        <option class="option-input"
+                                                value="<?= $discipline->discipline_id ?>"><?= $discipline->discipline_name ?></option>
+                                    <?php } ?>
+                                </select>
+                            </label>
+
+                            <label class="input-type">
+                                <div class="input-type-label">Control:</div>
+                                <select required class="input-type-item" name="control_id">
+                                    <option selected value="">choice</option>
+                                    <?php foreach ($controls as $control) { ?>
+                                        <option class="option-input"
+                                                value="<?= $control->control_id ?>"><?= $control->control_name ?></option>
+                                    <?php } ?>
+                                </select>
+                            </label>
+
+                            <label class="input-type">
+                                <div class="input-type-label">Grade:</div>
+                                <select required class="input-type-item" name="grade_id">
+                                    <option selected value="">choice</option>
+                                    <?php foreach ($grades as $grade) { ?>
+                                        <option class="option-input"
+                                                value="<?= $grade->grade_id ?>"><?= $grade->grade ?></option>
+                                    <?php } ?>
+                                </select>
+                            </label>
+
                             <input class="input-submit" type="submit" value="Add">
                         </div>
                     </form>

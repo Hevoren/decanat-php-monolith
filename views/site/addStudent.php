@@ -9,11 +9,26 @@
                     <p style="color: #005e00; margin-top: 10px; text-align: center"><?= $messageE ?? ''; ?></p>
                     <form action="" method="post">
                         <div class="input-wrapper">
-                            <input required class="input-type" type="text" placeholder="Name" name="name">
-                            <input required class="input-type" type="text" placeholder="Surname" name="surname">
-                            <input required class="input-type" type="text" placeholder="Mid name" name="mid_name">
-                            <input required class="input-type" type="date" placeholder="Born date" name="birth_date">
-                            <input required class="input-type" type="text" placeholder="Adress" name="adress">
+                            <label class="input-type">
+                                <input required class="input-type-item-1" type="text" placeholder="Name" name="name">
+                            </label>
+
+                            <label class="input-type">
+                                <input required class="input-type-item-1" type="text" placeholder="Surname" name="surname">
+                            </label>
+
+                            <label class="input-type">
+                                <input required class="input-type-item-1" type="text" placeholder="Mid name" name="mid_name">
+                            </label>
+
+                            <label class="input-type">
+                                <input required class="input-type-item-1" type="date" placeholder="Born date" name="birth_date">
+                            </label>
+
+                            <label class="input-type">
+                                <input required class="input-type-item-1" type="text" placeholder="Adress" name="adress">
+                            </label>
+
                             <input type="hidden" name="group_id" value="<?= $groupId ?>">
                             <input class="input-submit" type="submit" value="Add">
                         </div>
