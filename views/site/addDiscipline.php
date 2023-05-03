@@ -8,6 +8,7 @@
                     <p style="color: #005e00; margin-top: 10px; text-align: center"><?= $messageE ?? ''; ?></p>
                     <form action="" method="post">
                         <div class="input-wrapper">
+                            <input name="csrf_token" type="hidden" value="<?= app()->auth::generateCSRF() ?>"/>
                             <label class="input-type">
                                 <input required class="input-type-item-1" type="text" placeholder="Discipline"
                                        name="discipline_name">

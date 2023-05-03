@@ -8,6 +8,7 @@
             <div class="confirmation">
                 <div class="confirmation-form">
                     <form method="post" class="confirmation-form-button">
+                        <input name="csrf_token" type="hidden" value="<?= app()->auth::generateCSRF() ?>"/>
                         <input type="hidden" name="group_id" value="<?= $disciplineId ?>">
                         <input class="confirmation-form-button-item" type="submit" value="Yes">
                     </form>

@@ -9,6 +9,8 @@ if (!app()->auth::check()):
                 <p style="color: red; margin-top: 10px"><?= $message ?? ''; ?></p>
                 <form action="" method="post">
                     <div class="input-wrapper">
+                        <input name="csrf_token" type="hidden" value="<?= app()->auth::generateCSRF() ?>"/>
+
                         <label class="input-type">
                             <input required class="input-type-login-item" type="text" placeholder="Login" name="login">
                         </label>
@@ -16,6 +18,7 @@ if (!app()->auth::check()):
                         <label class="input-type">
                             <input required class="input-type-login-item" type="password" placeholder="Password" name="password">
                         </label>
+
                         <input class="input-submit" type="submit" value="submit">
                         <a class="offer-a" href="<?= app()->route->getUrl('/register') ?>"> Need an account?</a>
                     </div>
