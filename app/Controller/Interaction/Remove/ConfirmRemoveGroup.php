@@ -15,13 +15,21 @@ class ConfirmRemoveGroup
     public function confirmationGroup(Request $request): string
     {
         if ($request->method === 'POST') {
-            $student = Students::where('group_id', $request->group_id)->first();
-            $gradeCard = GradeCards::where('student_id', $student->student_id)->first();
+            $student = Students::where('group_id', $request->group_id)->get();
+            $studId = Students::where('group_id', $request->group_id)->first();
+            $gradeCard = GradeCards::where('student_id', $studId->student_id)->first();
             $groupDisc = GroupDiscipline::where('group_id', $request->group_id)->first();
             $group = Groups::where('group_id', $request->group_id)->first();
             if ((isset($groupDisc) === true) && (isset($student) === true) && (isset($gradeCard) === true)) {
-                $gradeCard->delete();
-                $student->delete();
+                foreach ($student as $stud) {
+                    $grCard = GradeCards::where('student_id', $stud->student_id);
+                    $grCard->delete();
+                    app()->route->redirect('/group');
+                }
+                foreach ($student as $stud) {
+                    $stud->delete();
+                    app()->route->redirect('/group');
+                }
                 $groupDisc->delete();
                 $group->delete();
                 app()->route->redirect('/group');
@@ -40,16 +48,29 @@ class ConfirmRemoveGroup
                 app()->route->redirect('/group');
             } elseif ((isset($groupDisc) === true) && (isset($gradeCard) === false) && (isset($student) === true)) {
                 $groupDisc->delete();
-                $student->delete();
+                foreach ($student as $stud) {
+                    $stud->delete();
+                    app()->route->redirect('/group');
+                }
                 $group->delete();
                 app()->route->redirect('/group');
             } elseif ((isset($groupDisc) === false) && (isset($gradeCard) === false) && (isset($student) === true)) {
-                $student->delete();
+                foreach ($student as $stud) {
+                    $stud->delete();
+                    app()->route->redirect('/group');
+                }
                 $group->delete();
                 app()->route->redirect('/group');
             } elseif ((isset($groupDisc) === false) && (isset($gradeCard) === true) && (isset($student) === true)) {
-                $gradeCard->delete();
-                $student->delete();
+                foreach ($student as $stud) {
+                    $grCard = GradeCards::where('student_id', $stud->student_id);
+                    $grCard->delete();
+                    app()->route->redirect('/group');
+                }
+                foreach ($student as $stud) {
+                    $stud->delete();
+                    app()->route->redirect('/group');
+                }
                 $group->delete();
                 app()->route->redirect('/group');
             } elseif ((isset($groupDisc) === false) && (isset($gradeCard) === true) && (isset($student) === false)) {
