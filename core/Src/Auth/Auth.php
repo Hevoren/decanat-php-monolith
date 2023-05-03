@@ -9,6 +9,17 @@ class Auth
     //Свойство для хранения любого класса, реализующего интерфейс IdentityInterface
     private static IdentityInterface $user;
 
+    public static function userHasRole(int $requiredRole): bool
+    {
+        $user = self::user();
+
+        if ($user) {
+            return $user->role_id === $requiredRole;
+        }
+
+        return false;
+    }
+
     //Инициализация класса пользователя
     public static function init(IdentityInterface $user): void
     {

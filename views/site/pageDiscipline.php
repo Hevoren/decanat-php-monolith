@@ -1,3 +1,8 @@
+<?php
+
+use Src\Auth\Auth;
+
+?>
 <main>
     <div class="main-flex-page-discipline">
         <div class="card-page-discipline">
@@ -7,10 +12,14 @@
                         <?= $discipline->discipline_name ?>
                     </p>
                 <?php } ?>
-                <div class="disc-tt">
-                    <a href="<?= app()->route->getUrl('/confirmationDelDiscipline') . '?discipline_id=' . $discipline->discipline_id ?>" class="disc-ttt">Delete</a>
-                    <a href="<?= app()->route->getUrl('/pageDisciplineEdit') . '?discipline_id=' . $discipline->discipline_id ?>" class="disc-ttt">Edit</a>
-                </div>
+                <?php if (app()->auth::userHasRole(2)): ?>
+                    <div class="disc-tt">
+                        <a href="<?= app()->route->getUrl('/confirmationDelDiscipline') . '?discipline_id=' . $discipline->discipline_id ?>"
+                           class="disc-ttt">Delete</a>
+                        <a href="<?= app()->route->getUrl('/pageDisciplineEdit') . '?discipline_id=' . $discipline->discipline_id ?>"
+                           class="disc-ttt">Edit</a>
+                    </div>
+                <?php endif; ?>
             </div>
             <div class="discipline-info">
                 <div class="right-column">
@@ -22,17 +31,17 @@
                 </div>
                 <div class="left-column">
                     <?php foreach ($disciplines as $discipline) { ?>
-                    <div>
-                        <p>
-                            <?= $discipline->semestrDisciplines->semestr ?>
-                        </p>
-                        <p>
-                            <?= $discipline->controlDisciplines->control_name ?>
-                        </p>
-                        <p>
-                            <?= $discipline->hours ?>
-                        </p>
-                    </div>
+                        <div>
+                            <p>
+                                <?= $discipline->semestrDisciplines->semestr ?>
+                            </p>
+                            <p>
+                                <?= $discipline->controlDisciplines->control_name ?>
+                            </p>
+                            <p>
+                                <?= $discipline->hours ?>
+                            </p>
+                        </div>
                     <?php } ?>
                 </div>
             </div>

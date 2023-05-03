@@ -115,7 +115,7 @@ class Interactive
 
     public function addGrade(Request $request): string
     {
-        if($request->method === 'POST') {
+        if ($request->method === 'POST') {
             $gradeStudent = GradeCards::create([
                 'student_id' => $request->student_id,
                 'discipline_id' => $request->discipline_id,
@@ -127,35 +127,49 @@ class Interactive
         return new View('site.student');
     }
 
-    public function confirmationGroup(Request $request):string
+    public function confirmationGroup(Request $request): string
     {
         if ($request->method === 'POST') {
-            $student = Students::where('group_id', $request->group_id);
+            $student = Students::where('group_id', $request->group_id)->first();
+            $gradeCard = GradeCards::where('student_id', $student->student_id)->first();
             $groupDisc = GroupDiscipline::where('group_id', $request->group_id)->first();
             $group = Groups::where('group_id', $request->group_id)->first();
-            if((isset($groupDisc) === true) && (isset($student) === true)){
+            if ((isset($groupDisc) === true) && (isset($student) === true) && (isset($gradeCard) === true)) {
+                $gradeCard->delete();
                 $student->delete();
                 $groupDisc->delete();
                 $group->delete();
                 app()->route->redirect('/group');
-            }elseif (isset($groupDisc) === false){
-                if(isset($student) === true){
-                    $student->delete();
-                    $group->delete();
-                    app()->route->redirect('/group');
-                }elseif (isset($student) === false){
-                    $group->delete();
-                    app()->route->redirect('/group');
-                }
-            }elseif(isset($groupDisc) === true){
-                if(isset($student) === true){
-                    $student->delete();
-                    $group->delete();
-                    app()->route->redirect('/group');
-                }elseif (isset($student) === false){
-                    $group->delete();
-                    app()->route->redirect('/group');
-                }
+            } elseif ((isset($groupDisc) === false) && (isset($gradeCard) === false) && (isset($student) === false)) {
+                $group->delete();
+                app()->route->redirect('/group');
+
+            } elseif ((isset($groupDisc) === true) && (isset($gradeCard) === false) && (isset($student) === false)) {
+                $groupDisc->delete();
+                $group->delete();
+                app()->route->redirect('/group');
+
+            } elseif ((isset($groupDisc) === true) && (isset($gradeCard) === true) && (isset($student) === false)) {
+                $groupDisc->delete();
+                $group->delete();
+                app()->route->redirect('/group');
+            } elseif ((isset($groupDisc) === true) && (isset($gradeCard) === false) && (isset($student) === true)) {
+                $groupDisc->delete();
+                $student->delete();
+                $group->delete();
+                app()->route->redirect('/group');
+            } elseif ((isset($groupDisc) === false) && (isset($gradeCard) === false) && (isset($student) === true)) {
+                $student->delete();
+                $group->delete();
+                app()->route->redirect('/group');
+            } elseif ((isset($groupDisc) === false) && (isset($gradeCard) === true) && (isset($student) === true)) {
+                $gradeCard->delete();
+                $student->delete();
+                $group->delete();
+                app()->route->redirect('/group');
+            } elseif ((isset($groupDisc) === false) && (isset($gradeCard) === true) && (isset($student) === false)) {
+                $group->delete();
+                app()->route->redirect('/group');
             }
         }
         return new View('site.confirmationDelGroup');
@@ -187,30 +201,30 @@ class Interactive
 
     public function confirmationDiscipline(Request $request): string
     {
-        if ($request->method === 'POST'){
+        if ($request->method === 'POST') {
             $gradeCard = GradeCards::where('discipline_id', $request->discipline_id);
             $groupDisc = GroupDiscipline::where('discipline_id', $request->discipline_id)->first();
             $discipline = Disciplines::where('discipline_id', $request->discipline_id)->first();
-            if((isset($groupDisc) === true) && (isset($gradeCard) === true)){
+            if ((isset($groupDisc) === true) && (isset($gradeCard) === true)) {
                 $gradeCard->delete();
                 $groupDisc->delete();
                 $discipline->delete();
                 app()->route->redirect('/discipline');
-            }elseif (isset($groupDisc) === false){
-                if(isset($gradeCard) === true){
+            } elseif (isset($groupDisc) === false) {
+                if (isset($gradeCard) === true) {
                     $gradeCard->delete();
                     $discipline->delete();
                     app()->route->redirect('/discipline');
-                }elseif (isset($gradeCard) === false){
+                } elseif (isset($gradeCard) === false) {
                     $discipline->delete();
                     app()->route->redirect('/discipline');
                 }
-            }elseif(isset($groupDisc) === true){
-                if(isset($gradeCard) === true){
+            } elseif (isset($groupDisc) === true) {
+                if (isset($gradeCard) === true) {
                     $gradeCard->delete();
                     $discipline->delete();
                     app()->route->redirect('/discipline');
-                }elseif (isset($gradeCard) === false){
+                } elseif (isset($gradeCard) === false) {
                     $discipline->delete();
                     app()->route->redirect('/discipline');
                 }

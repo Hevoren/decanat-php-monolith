@@ -38,55 +38,55 @@ Route::add('GET', '/pageStudent', [Controller\Site::class, 'pageStudent'])
 
 //Личный кабинет админа в котором он может принимать на работу или увольнять сотрудников деканата
 Route::add('GET', '/cab', [Controller\Site::class, 'cab'])
-    ->middleware('auth');
+    ->middleware('auth', 'can:1');
 Route::add( 'POST', '/cab', [Controller\Site::class, 'controlUser'])
-    ->middleware('auth');
+    ->middleware('auth', 'can:1');
 
 //Форма добавления дисициплины
 Route::add('GET', '/addDiscipline', [Controller\Interactive::class, 'addDisciplineGet'])
-    ->middleware('auth');
+    ->middleware('auth', 'can:2');
 Route::add('POST', '/addDiscipline', [Controller\Interactive::class, 'addDiscipline'])
-    ->middleware('auth');
+    ->middleware('auth', 'can:2');
 
 //Форма добавления группы
 Route::add('GET', '/addGroup', [Controller\Interactive::class, 'addGroupGet'])
-    ->middleware('auth');
+    ->middleware('auth', 'can:2');
 Route::add('POST', '/addGroup', [Controller\Interactive::class, 'addGroup'])
-    ->middleware('auth');
+    ->middleware('auth', 'can:2');
 
 //Форма добавления студента для выбранной группы
 Route::add('GET', '/addStudent', [Controller\Interactive::class, 'addStudentGet'])
-    ->middleware('auth');
+    ->middleware('auth', 'can:2');
 Route::add('POST', '/addStudent', [Controller\Interactive::class, 'addStudent'])
-    ->middleware('auth');
+    ->middleware('auth', 'can:2');
 
 //Форма добавления оценки в зачетку для выбранного студента выбранной группы
 Route::add('GET', '/addGrade', [Controller\Interactive::class, 'addGradeGet'])
-    ->middleware('auth');
+    ->middleware('auth', 'can:2');
 Route::add('POST', '/addGrade', [Controller\Interactive::class, 'addGrade'])
-    ->middleware('auth');
+    ->middleware('auth', 'can:2');
 
 
 //Подтверждение удаления группы
 Route::add('GET', '/confirmationDelGroup', [Controller\Interactive::class, 'confirmationGroup'])
-    ->middleware('auth');
+    ->middleware('auth', 'can:2');
 Route::add('POST', '/confirmationDelGroup', [Controller\Interactive::class, 'confirmationGroup'])
-    ->middleware('auth');
+    ->middleware('auth', 'can:2');
 
 //Редактирование группы
 Route::add('GET', '/pageGroupEdit', [Controller\Interactive::class, 'editPageGroupGet'])
-    ->middleware('auth');
+    ->middleware('auth', 'can:2');
 Route::add('POST', '/pageGroupEdit', [Controller\Interactive::class, 'editPageGroup'])
-    ->middleware('auth');
+    ->middleware('auth', 'can:2');
 
 //Подтверждение удаления дисциплины
 Route::add('GET', '/confirmationDelDiscipline', [Controller\Interactive::class, 'confirmationDiscipline'])
-    ->middleware('auth');
+    ->middleware('auth', 'can:2');
 Route::add('POST', '/confirmationDelDiscipline', [Controller\Interactive::class, 'confirmationDiscipline'])
-    ->middleware('auth');
+    ->middleware('auth', 'can:2');
 
 //Редактирование дисциплины
 Route::add('GET', '/pageDisciplineEdit', [Controller\Interactive::class, 'editPageDisciplineGet'])
-    ->middleware('auth');
+    ->middleware('auth', 'can:2');
 Route::add('POST', '/pageDisciplineEdit', [Controller\Interactive::class, 'editPageDiscipline'])
-    ->middleware('auth');
+    ->middleware('auth', 'can:2');

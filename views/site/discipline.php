@@ -1,3 +1,8 @@
+<?php
+
+use Src\Auth\Auth;
+
+?>
 <main>
     <div class="main-flex-discipline">
         <div class="div-main-title-discipline">
@@ -11,9 +16,11 @@
                     <?= $discipline->discipline_name ?>
                 </a>
             <?php } ?>
-            <a class="card-add" href="<?= app()->route->getUrl('/addDiscipline') ?>">
-                +
-            </a>
+            <?php if (app()->auth::userHasRole(2)): ?>
+                <a class="card-add" href="<?= app()->route->getUrl('/addDiscipline') ?>">
+                    +
+                </a>
+            <?php endif; ?>
         </div>
     </div>
 </main>

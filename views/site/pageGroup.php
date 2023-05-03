@@ -1,3 +1,8 @@
+<?php
+
+use Src\Auth\Auth;
+
+?>
 <main>
     <div class="main-flex-page-group">
         <div class="card-page-group">
@@ -7,10 +12,14 @@
                         <?= $group->group_name ?>
                     </p>
                 <?php } ?>
-                <div class="disc-tt">
-                    <a href="<?= app()->route->getUrl('/confirmationDelGroup') . '?group_id=' . $group->group_id ?>" class="disc-ttt">Delete</a>
-                    <a href="<?= app()->route->getUrl('/pageGroupEdit') . '?group_id=' . $group->group_id ?>" class="disc-ttt">Edit</a>
-                </div>
+                <?php if (app()->auth::userHasRole(2)): ?>
+                    <div class="disc-tt">
+                        <a href="<?= app()->route->getUrl('/confirmationDelGroup') . '?group_id=' . $group->group_id ?>"
+                           class="disc-ttt">Delete</a>
+                        <a href="<?= app()->route->getUrl('/pageGroupEdit') . '?group_id=' . $group->group_id ?>"
+                           class="disc-ttt">Edit</a>
+                    </div>
+                <?php endif; ?>
             </div>
             <div class="group-info">
                 <div class="right-column-group">

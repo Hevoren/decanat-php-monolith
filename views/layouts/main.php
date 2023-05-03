@@ -1,3 +1,8 @@
+<?php
+
+use Src\Auth\Auth;
+
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -8,19 +13,19 @@
 <!--    <link rel="stylesheet" href="../php-framework/public/assests/login.css">-->
 <!--    <link rel="stylesheet" href="/public/assets/login.css">-->
 
-    <link rel="stylesheet" href="/public/assets/css/login.css">
-    <link rel="stylesheet" href="/public/assets/css/main.css">
-    <link rel="stylesheet" href="/public/assets/css/disciplines.css">
-    <link rel="stylesheet" href="/public/assets/css/students.css">
-    <link rel="stylesheet" href="/public/assets/css/page_discipline.css">
-    <link rel="stylesheet" href="/public/assets/css/groups.css">
-    <link rel="stylesheet" href="/public/assets/css/page_group.css">
-    <link rel="stylesheet" href="/public/assets/css/page_student.css">
-    <link rel="stylesheet" href="/public/assets/css/cab.css">
-    <link rel="stylesheet" href="/public/assets/css/addGroup.css">
-    <link rel="stylesheet" href="/public/assets/css/addDiscipline.css">
-    <link rel="stylesheet" href="/public/assets/css/general.css">
-    <link rel="stylesheet" href="/public/assets/css/confirmation.css">
+    <link rel="stylesheet" href="../php-framework/public/assets/css/login.css">
+    <link rel="stylesheet" href="../php-framework/public/assets/css/main.css">
+    <link rel="stylesheet" href="../php-framework/public/assets/css/disciplines.css">
+    <link rel="stylesheet" href="../php-framework/public/assets/css/students.css">
+    <link rel="stylesheet" href="../php-framework/public/assets/css/page_discipline.css">
+    <link rel="stylesheet" href="../php-framework/public/assets/css/groups.css">
+    <link rel="stylesheet" href="../php-framework/public/assets/css/page_group.css">
+    <link rel="stylesheet" href="../php-framework/public/assets/css/page_student.css">
+    <link rel="stylesheet" href="../php-framework/public/assets/css/cab.css">
+    <link rel="stylesheet" href="../php-framework/public/assets/css/addGroup.css">
+    <link rel="stylesheet" href="../php-framework/public/assets/css/addDiscipline.css">
+    <link rel="stylesheet" href="../php-framework/public/assets/css/general.css">
+    <link rel="stylesheet" href="../php-framework/public/assets/css/confirmation.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
     </style>
@@ -43,7 +48,9 @@
                 <ul class="list">
                     <p class="tab-bar"><a href="<?= app()->route->getUrl('/discipline') ?>">Disciplines</a></p>
                     <p class="tab-bar"><a href="<?= app()->route->getUrl('/group') ?>">Groups</a></p>
-                    <p class="tab-bar"><a href="<?= app()->route->getUrl('/cab') ?>">Cab</a></p>
+                    <?php if (app()->auth::userHasRole(1)): ?>
+                        <p class="tab-bar"><a href="<?= app()->route->getUrl('/cab') ?>">Cab</a></p>
+                    <?php endif; ?>
                     <p class="tab-bar"><a href="<?= app()->route->getUrl('/logout') ?>">Exit</a></p>
                 </ul>
             <?php

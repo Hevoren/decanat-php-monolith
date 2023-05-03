@@ -1,3 +1,8 @@
+<?php
+
+use Src\Auth\Auth;
+
+?>
 <main>
     <div class="main-flex">
         <div class="student">
@@ -81,10 +86,12 @@
             <div class="grade-card-title">
                 <p class="grade-card-title-item">Grade Card</p>
                 <p class="grade-card-title-item">
+                    <?php if (app()->auth::userHasRole(2)): ?>
                     <?php foreach ($students as $student) { ?>
                         <a href="<?= app()->route->getUrl('/addGrade') . '?student_id=' . $student->student_id ?>"
                            class="grade-card-title-item-add">Add</a>
                     <?php } ?>
+                    <?php endif; ?>
                 </p>
             </div>
 

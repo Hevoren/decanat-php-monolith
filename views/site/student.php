@@ -1,3 +1,8 @@
+<?php
+
+use Src\Auth\Auth;
+
+?>
 <main>
     <?php if (isset($groups)): ?>
         <div class="main-flex-students">
@@ -20,10 +25,12 @@
                         </div>
                     <?php } ?>
                     <div>
+                        <?php if (app()->auth::userHasRole(2)): ?>
                         <a class="student-add"
                            href="<?= app()->route->getUrl('/addStudent') . '?group_id=' . $group->group_id ?>">Добавить
                             студента
                         </a>
+                        <?php endif; ?>
                     </div>
                     <?php } ?>
                 </div>
