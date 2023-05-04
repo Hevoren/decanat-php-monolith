@@ -31,18 +31,20 @@ class AddGroup
 
         if ($request->method === 'POST') {
             $validator = new Validator($request->all(), [
-                'group_name' => ['required', 'unique:groups,group_name'],
-                'speciality_id' => ['required'],
-                'course_id' => ['required'],
-                'edcform_id' => ['required'],
+                'group_name' => ['required', 'unique:groups,group_name', 'number'],
+                'speciality_id' => ['required', 'number'],
+                'course_id' => ['required', 'number'],
+                'edcform_id' => ['required', 'number'],
+                'discipline_id' => ['required', 'number']
             ], [
                 'required' => 'Field :field is empty',
-                'unique' => 'Field :field must be unique'
+                'unique' => 'Group must be unique',
+                'number' => 'Field :field incorrect'
             ]);
 
             if($validator->fails()){
-                return new View('site.addGroup',
-                    ['message' => json_encode($validator->errors(), JSON_UNESCAPED_UNICODE)]);
+                $messageD = json_encode($validator->errors(), JSON_UNESCAPED_UNICODE);
+                return new View('site.addGroup', ['messageD' => $messageD]);
             }
 
             $groups = Groups::create([

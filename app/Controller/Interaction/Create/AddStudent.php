@@ -18,20 +18,23 @@ class AddStudent
     public function addStudent(Request $request): string
     {
         $validator = new Validator($request->all(), [
-            'name' => ['required', 'unique:students,name'],
-            'surname' => ['required', 'unique:students,surname'],
-            'mid_name' => ['required', 'unique:students,mid_name'],
-            'birth_date' => ['required'],
+            'name' => ['required', 'unique:students,name', 'cyrillic'],
+            'surname' => ['required', 'unique:students,surname', 'cyrillic'],
+            'mid_name' => ['required', 'unique:students,mid_name', 'cyrillic'],
+            'birth_date' => ['required', 'date'],
             'adress' => ['required'],
-            'group_id' => ['required'],
+            'group_id' => ['required', 'number'],
         ], [
             'required' => 'Field :field is empty',
-            'unique' => 'Field :field must be unique'
+            'unique' => 'Field :field must be unique',
+            'date' => 'Incorrect date format',
+            'number' => 'Field :field incorrect',
+            'cyrillic' => 'Field :field must be cyrillic'
         ]);
 
         if($validator->fails()){
-            return new View('site.addStudent',
-                ['message' => json_encode($validator->errors(), JSON_UNESCAPED_UNICODE)]);
+            $messageD = json_encode($validator->errors(), JSON_UNESCAPED_UNICODE);
+            return new View('site.addStudent', ['messageD' => $messageD]);
         }
 
         if ($request->method === 'POST') {

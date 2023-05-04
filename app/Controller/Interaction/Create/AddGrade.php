@@ -23,18 +23,19 @@ class AddGrade
     public function addGrade(Request $request): string
     {
         $validator = new Validator($request->all(), [
-            'student_id' => ['required'],
-            'discipline_id' => ['required'],
-            'control_id' => ['required'],
-            'grade_id' => ['required'],
+            'student_id' => ['required', 'number'],
+            'discipline_id' => ['required', 'number'],
+            'control_id' => ['required', 'number'],
+            'grade_id' => ['required', 'number'],
         ], [
             'required' => 'Field :field is empty',
-            'unique' => 'Field :field must be unique'
+            'unique' => 'Field :field must be unique',
+            'number' => 'Field :field incorrect'
         ]);
 
         if($validator->fails()){
-            return new View('site.addStudent',
-                ['message' => json_encode($validator->errors(), JSON_UNESCAPED_UNICODE)]);
+            $messageD = json_encode($validator->errors(), JSON_UNESCAPED_UNICODE);
+            return new View('site.addStudent', ['messageD' => $messageD]);
         }
 
         if ($request->method === 'POST') {

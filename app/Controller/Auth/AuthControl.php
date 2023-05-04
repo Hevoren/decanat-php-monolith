@@ -29,16 +29,18 @@ class AuthControl
 
         $validator = new Validator($request->all(), [
             'name' => ['required'],
-            'login' => ['required', 'unique:temp_users,login'],
-            'password' => ['required']
+            'login' => ['required', 'unique:temp_users,login', 'latin'],
+            'password' => ['required', 'password']
         ], [
             'required' => 'Field :field empty',
-            'unique' => 'Field :field must be unique'
+            'unique' => 'Field login must be unique',
+            'latin' => 'Login must be latin',
+            'password' => 'Password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, and one number'
         ]);
 
         if ($validator->fails()) {
-            return new View('site.register',
-                ['message' => json_encode($validator->errors(), JSON_UNESCAPED_UNICODE)]);
+            $messageD = json_encode($validator->errors(), JSON_UNESCAPED_UNICODE);
+            return new View('site.register', ['messageD' => $messageD]);
         }
 
         if ($request->method === 'POST' && TempUsers::create($request->all())) {

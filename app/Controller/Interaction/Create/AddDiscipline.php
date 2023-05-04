@@ -28,19 +28,21 @@ class AddDiscipline
     {
         if ($request->method === 'POST') {
             $validator = new Validator($request->all(), [
-                'discipline_name' => ['required', 'unique:disciplines,discipline_name'],
-                'semestr_id' => ['required'],
-                'hours' => ['required'],
-                'control_id' => ['required'],
-                'group_id' => ['required']
+                'discipline_name' => ['required', 'unique:disciplines,discipline_name', 'cyrillic'],
+                'semestr_id' => ['required', 'number'],
+                'hours' => ['required', 'number'],
+                'control_id' => ['required', 'number'],
+                'group_id' => ['required', 'number']
             ], [
                 'required' => 'Field :field is empty',
-                'unique' => 'Field :field must be unique'
+                'unique' => 'Discipline must be unique',
+                'number' => 'Field :field incorrect',
+                'cyrillic' => 'Field :field must be cyrillic'
             ]);
 
             if($validator->fails()){
-                return new View('site.addDiscipline',
-                    ['message' => json_encode($validator->errors(), JSON_UNESCAPED_UNICODE)]);
+                $messageD = json_encode($validator->errors(), JSON_UNESCAPED_UNICODE);
+                return new View('site.addDiscipline', ['messageD' => $messageD]);
             }
 
             $disciplines = Disciplines::create([

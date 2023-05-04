@@ -16,7 +16,8 @@ if (!app()->auth::check()):
                         </label>
 
                         <label class="input-type">
-                            <input required class="input-type-login-item" type="password" placeholder="Password" name="password">
+                            <input required class="input-type-login-item" type="password" placeholder="Password"
+                                   name="password">
                         </label>
 
                         <input class="input-submit" type="submit" value="submit">
