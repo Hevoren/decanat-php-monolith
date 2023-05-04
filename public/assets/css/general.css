@@ -47,7 +47,7 @@ header {
 }
 
 .list {
-    margin-left: 120px;
+    margin-left: 135px;
     width: 450px;
     display: flex;
     flex-direction: row;
@@ -102,16 +102,6 @@ header {
     flex-direction: row;
 }
 
-.search-block-form-submit {
-    margin-left: 5px;
-    border-radius: 15px;
-    width: 30px;
-    height: 30px;
-    border: none;
-    cursor: pointer;
-    background-color: #81bece;
-    transition: 0.5s;
-}
 
 .search-block-form-submit:hover {
     background-color: #6296a3;
@@ -122,7 +112,7 @@ header {
     border: 2px solid #91bfcb;
     box-shadow: none;
     color: white;
-
+    width: 185px;
 }
 
 .input-type-search:focus {
@@ -131,12 +121,25 @@ header {
 }
 
 .search-block-form-input {
+    padding-left: 10px;
     border-radius: 10px;
     height: 30px;
     background: none;
     border: none;
     color: white;
     text-align: left;
+}
+
+
+.search-block-form-submit {
+    margin-left: 5px;
+    border-radius: 15px;
+    width: 30px;
+    height: 30px;
+    border: none;
+    cursor: pointer;
+    background-color: #81bece;
+    transition: 0.5s;
 }
 
 /*  */
