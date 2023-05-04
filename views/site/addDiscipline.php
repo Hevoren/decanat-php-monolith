@@ -48,7 +48,8 @@
                             </label>
 
                             <label class="input-type">
-                                <input required class="input-type-item-1" type="number" placeholder="Hours" name="hours">
+                                <input required class="input-type-item-1" type="number" placeholder="Hours"
+                                       name="hours">
                             </label>
 
                             <input class="input-submit" type="submit" value="Add">

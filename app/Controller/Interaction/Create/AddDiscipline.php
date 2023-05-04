@@ -27,6 +27,22 @@ class AddDiscipline
     public function addDiscipline(Request $request): string
     {
         if ($request->method === 'POST') {
+            $validator = new Validator($request->all(), [
+                'discipline_name' => ['required', 'unique:disciplines,discipline_name'],
+                'semestr_id' => ['required'],
+                'hours' => ['required'],
+                'control_id' => ['required'],
+                'group_id' => ['required']
+            ], [
+                'required' => 'Field :field is empty',
+                'unique' => 'Field :field must be unique'
+            ]);
+
+            if($validator->fails()){
+                return new View('site.addDiscipline',
+                    ['message' => json_encode($validator->errors(), JSON_UNESCAPED_UNICODE)]);
+            }
+
             $disciplines = Disciplines::create([
                 'discipline_name' => $request->discipline_name,
                 'semestr_id' => $request->semestr_id,

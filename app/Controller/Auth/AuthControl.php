@@ -6,6 +6,7 @@ use Model\TempUsers;
 use Model\Users;
 use Src\Auth\Auth;
 use Src\Request;
+use Src\Validator\Validator;
 use Src\View;
 
 class AuthControl
@@ -24,6 +25,20 @@ class AuthControl
         if ($request->method === 'GET') {
             session_unset();
             return new View('site.register');
+        }
+
+        $validator = new Validator($request->all(), [
+            'name' => ['required'],
+            'login' => ['required', 'unique:temp_users,login'],
+            'password' => ['required']
+        ], [
+            'required' => 'Field :field empty',
+            'unique' => 'Field :field must be unique'
+        ]);
+
+        if ($validator->fails()) {
+            return new View('site.register',
+                ['message' => json_encode($validator->errors(), JSON_UNESCAPED_UNICODE)]);
         }
 
         if ($request->method === 'POST' && TempUsers::create($request->all())) {

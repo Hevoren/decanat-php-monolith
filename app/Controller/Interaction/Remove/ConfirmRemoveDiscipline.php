@@ -13,17 +13,27 @@ class ConfirmRemoveDiscipline
     public function confirmationDiscipline(Request $request): string
     {
         if ($request->method === 'POST') {
-            $gradeCard = GradeCards::where('discipline_id', $request->discipline_id);
-            $groupDisc = GroupDiscipline::where('discipline_id', $request->discipline_id)->first();
+            $gradeCard = GradeCards::where('discipline_id', $request->discipline_id)->get();
+            $groupDisc = GroupDiscipline::where('discipline_id', $request->discipline_id)->get();
             $discipline = Disciplines::where('discipline_id', $request->discipline_id)->first();
             if ((isset($groupDisc) === true) && (isset($gradeCard) === true)) {
-                $gradeCard->delete();
-                $groupDisc->delete();
+                foreach ($gradeCard as $i) {
+                    $grCard = GradeCards::where('discipline_id', $i->discipline_id);
+                    $grCard->delete();
+                }
+                foreach ($groupDisc as $i) {
+                    $grDisc = GroupDiscipline::where('discipline_id', $i->discipline_id);
+                    $grDisc->delete();
+                }
                 $discipline->delete();
                 app()->route->redirect('/discipline');
-            } elseif (isset($groupDisc) === false) {
+            }
+            if (isset($groupDisc) === false) {
                 if (isset($gradeCard) === true) {
-                    $gradeCard->delete();
+                    foreach ($gradeCard as $i) {
+                        $grCard = GradeCards::where('discipline_id', $i->discipline_id);
+                        $grCard->delete();
+                    }
                     $discipline->delete();
                     app()->route->redirect('/discipline');
                 } elseif (isset($gradeCard) === false) {
@@ -31,11 +41,11 @@ class ConfirmRemoveDiscipline
                     app()->route->redirect('/discipline');
                 }
             } elseif (isset($groupDisc) === true) {
-                if (isset($gradeCard) === true) {
-                    $gradeCard->delete();
-                    $discipline->delete();
-                    app()->route->redirect('/discipline');
-                } elseif (isset($gradeCard) === false) {
+                if (isset($gradeCard) === false) {
+                    foreach ($groupDisc as $i) {
+                        $grDisc = GroupDiscipline::where('discipline_id', $i->discipline_id);
+                        $grDisc->delete();
+                    }
                     $discipline->delete();
                     app()->route->redirect('/discipline');
                 }

@@ -9,6 +9,7 @@ use Model\GroupDiscipline;
 use Model\Groups;
 use Model\Specialities;
 use Src\Request;
+use Src\Validator\Validator;
 use Src\View;
 
 
@@ -29,6 +30,21 @@ class AddGroup
     {
 
         if ($request->method === 'POST') {
+            $validator = new Validator($request->all(), [
+                'group_name' => ['required', 'unique:groups,group_name'],
+                'speciality_id' => ['required'],
+                'course_id' => ['required'],
+                'edcform_id' => ['required'],
+            ], [
+                'required' => 'Field :field is empty',
+                'unique' => 'Field :field must be unique'
+            ]);
+
+            if($validator->fails()){
+                return new View('site.addGroup',
+                    ['message' => json_encode($validator->errors(), JSON_UNESCAPED_UNICODE)]);
+            }
+
             $groups = Groups::create([
                 'group_name' => $request->group_name,
                 'speciality_id' => $request->speciality_id,

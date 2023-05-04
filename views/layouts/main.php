@@ -13,19 +13,19 @@ use Src\Auth\Auth;
 <!--    <link rel="stylesheet" href="../php-framework/public/assests/login.css">-->
 <!--    <link rel="stylesheet" href="/public/assets/login.css">-->
 
-    <link rel="stylesheet" href="/public/assets/css/login.css">
-    <link rel="stylesheet" href="/public/assets/css/main.css">
-    <link rel="stylesheet" href="/public/assets/css/disciplines.css">
-    <link rel="stylesheet" href="/public/assets/css/students.css">
-    <link rel="stylesheet" href="/public/assets/css/page_discipline.css">
-    <link rel="stylesheet" href="/public/assets/css/groups.css">
-    <link rel="stylesheet" href="/public/assets/css/page_group.css">
-    <link rel="stylesheet" href="/public/assets/css/page_student.css">
-    <link rel="stylesheet" href="/public/assets/css/cab.css">
-    <link rel="stylesheet" href="/public/assets/css/addGroup.css">
-    <link rel="stylesheet" href="/public/assets/css/addDiscipline.css">
-    <link rel="stylesheet" href="/public/assets/css/general.css">
-    <link rel="stylesheet" href="/public/assets/css/confirmation.css">
+    <link rel="stylesheet" href="../php-framework/public/assets/css/login.css">
+    <link rel="stylesheet" href="../php-framework/public/assets/css/main.css">
+    <link rel="stylesheet" href="../php-framework/public/assets/css/disciplines.css">
+    <link rel="stylesheet" href="../php-framework/public/assets/css/students.css">
+    <link rel="stylesheet" href="../php-framework/public/assets/css/page_discipline.css">
+    <link rel="stylesheet" href="../php-framework/public/assets/css/groups.css">
+    <link rel="stylesheet" href="../php-framework/public/assets/css/page_group.css">
+    <link rel="stylesheet" href="../php-framework/public/assets/css/page_student.css">
+    <link rel="stylesheet" href="../php-framework/public/assets/css/cab.css">
+    <link rel="stylesheet" href="../php-framework/public/assets/css/addGroup.css">
+    <link rel="stylesheet" href="../php-framework/public/assets/css/addDiscipline.css">
+    <link rel="stylesheet" href="../php-framework/public/assets/css/general.css">
+    <link rel="stylesheet" href="../php-framework/public/assets/css/confirmation.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
     </style>

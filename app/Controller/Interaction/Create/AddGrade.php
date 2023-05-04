@@ -7,6 +7,7 @@ use Model\Disciplines;
 use Model\GradeCards;
 use Model\Grades;
 use Src\Request;
+use Src\Validator\Validator;
 use Src\View;
 
 class AddGrade
@@ -21,6 +22,21 @@ class AddGrade
 
     public function addGrade(Request $request): string
     {
+        $validator = new Validator($request->all(), [
+            'student_id' => ['required'],
+            'discipline_id' => ['required'],
+            'control_id' => ['required'],
+            'grade_id' => ['required'],
+        ], [
+            'required' => 'Field :field is empty',
+            'unique' => 'Field :field must be unique'
+        ]);
+
+        if($validator->fails()){
+            return new View('site.addStudent',
+                ['message' => json_encode($validator->errors(), JSON_UNESCAPED_UNICODE)]);
+        }
+
         if ($request->method === 'POST') {
             $gradeStudent = GradeCards::create([
                 'student_id' => $request->student_id,
