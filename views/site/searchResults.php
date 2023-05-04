@@ -17,7 +17,11 @@ use Src\Auth\Auth;
                 <p><?= $group->group_name ?></p>
             <?php } ?>
             <?php foreach ($students as $student) { ?>
-                <p><?= $student->name ?></p>
+                <p>
+                    <?= $student->surname ?>
+                    <?= "&nbsp" . mb_substr($student->name, 0, 1) . "." ?>
+                    <?= "&nbsp" . mb_substr($student->mid_name, 0, 1) ?>
+                </p>
             <?php } ?>
         </div>
     </div>

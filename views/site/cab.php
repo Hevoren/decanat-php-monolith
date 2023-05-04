@@ -7,6 +7,7 @@
                     <div class="requests">
                         <p class="user-name"><?= $user->name ?></p>
                         <form method="post" class="request-button">
+                            <input name="csrf_token" type="hidden" value="<?= app()->auth::generateCSRF() ?>"/>
                             <input type="hidden" name="id" value="<?= $user->id ?>">
                             <button class="accept-user" type="submit">Accept</button>
                         </form>
@@ -19,6 +20,7 @@
                     <div class="requests">
                         <p class="user-name"><?= $user->name ?></p>
                         <form method="post" class="request-button">
+                            <input name="csrf_token" type="hidden" value="<?= app()->auth::generateCSRF() ?>"/>
                             <input type="hidden" name="id" value="<?= $user->id ?>">
                             <button class="accept-user" type="submit">Lay off</button>
                         </form>
