@@ -4,7 +4,7 @@ return [
     'host' => 'localhost',
     'database' => 'decanat',
     'username' => 'root',
-    'password' => 'QWEasd123',
+    'password' => '',
     'charset' => 'utf8mb4',
     'collation' => 'utf8mb4_unicode_ci',
     'prefix' => '',

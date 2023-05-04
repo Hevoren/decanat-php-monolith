@@ -2,8 +2,8 @@
 
 use Src\Auth\Auth;
 
-$currentPage = $_SERVER['REQUEST_URI'];
 $path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+$pathh = $_SERVER['REQUEST_URI'];
 
 ?>
 <!doctype html>
@@ -16,19 +16,19 @@ $path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
     <!--    <link rel="stylesheet" href="../php-framework/public/assests/login.css">-->
     <!--    <link rel="stylesheet" href="/public/assets/login.css">-->
 
-    <link rel="stylesheet" href="../php-framework/public/assets/css/login.css">
-    <link rel="stylesheet" href="../php-framework/public/assets/css/main.css">
-    <link rel="stylesheet" href="../php-framework/public/assets/css/disciplines.css">
-    <link rel="stylesheet" href="../php-framework/public/assets/css/students.css">
-    <link rel="stylesheet" href="../php-framework/public/assets/css/page_discipline.css">
-    <link rel="stylesheet" href="../php-framework/public/assets/css/groups.css">
-    <link rel="stylesheet" href="../php-framework/public/assets/css/page_group.css">
-    <link rel="stylesheet" href="../php-framework/public/assets/css/page_student.css">
-    <link rel="stylesheet" href="../php-framework/public/assets/css/cab.css">
-    <link rel="stylesheet" href="../php-framework/public/assets/css/addGroup.css">
-    <link rel="stylesheet" href="../php-framework/public/assets/css/addDiscipline.css">
-    <link rel="stylesheet" href="../php-framework/public/assets/css/general.css">
-    <link rel="stylesheet" href="../php-framework/public/assets/css/confirmation.css">
+    <link rel="stylesheet" href="/public/assets/css/login.css">
+    <link rel="stylesheet" href="/public/assets/css/main.css">
+    <link rel="stylesheet" href="/public/assets/css/disciplines.css">
+    <link rel="stylesheet" href="/public/assets/css/students.css">
+    <link rel="stylesheet" href="/public/assets/css/page_discipline.css">
+    <link rel="stylesheet" href="/public/assets/css/groups.css">
+    <link rel="stylesheet" href="/public/assets/css/page_group.css">
+    <link rel="stylesheet" href="/public/assets/css/page_student.css">
+    <link rel="stylesheet" href="/public/assets/css/cab.css">
+    <link rel="stylesheet" href="/public/assets/css/addGroup.css">
+    <link rel="stylesheet" href="/public/assets/css/addDiscipline.css">
+    <link rel="stylesheet" href="/public/assets/css/general.css">
+    <link rel="stylesheet" href="/public/assets/css/confirmation.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
     </style>
@@ -55,11 +55,11 @@ $path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
                     <ul class="list">
                         <?php if (strpos($_SERVER['REQUEST_URI'], '/discipline') !== false || strpos($_SERVER['REQUEST_URI'], '/group') !== false || strpos($_SERVER['REQUEST_URI'], '/student') !== false): ?>
                             <div class="search-block">
-                                <form class="search-block-form" method="get" action="searchResults">
+                                <form class="search-block-form" method="get" action="/searchResults">
                                     <input type="hidden" name="currentPage" value="<?= $path ?>">
-                                    <label class="input-type-search">
-                                        <input required class="search-block-form-input" type="text" name="searchRequest">
-                                    </label>
+                                    <input type="hidden" name="currentPagee" value="<?= $pathh ?>">
+                                    <input required class="search-block-form-input" type="text"
+                                           name="searchRequest" placeholder="Search">
                                     <input class="search-block-form-submit" type="submit" value="GO">
                                 </form>
                             </div>
