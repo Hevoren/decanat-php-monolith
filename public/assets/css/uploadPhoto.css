@@ -1,0 +1,31 @@
+.form-upload-photo {
+    margin-top: 100px;
+    width: 325px;
+}
+
+.upload-photo {
+    display: flex;
+    flex-direction: column;
+    width: 325px
+}
+
+.upload-photo-input {
+    width: 100%;
+}
+
+.upload-photo-submit {
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    margin-top: 10px;
+    padding: 10px;
+    width: 100%;
+    background-color: #81bece;
+    transition: 0.5s;
+}
+
+.img-upload-photo {
+    min-height: 400px;
+    min-width: 400px;
+    max-height: 400px;
+}

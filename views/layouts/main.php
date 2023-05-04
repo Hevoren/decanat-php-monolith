@@ -1,9 +1,14 @@
 <?php
 
+use Model\Uploads;
 use Src\Auth\Auth;
 
 $path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 $pathh = $_SERVER['REQUEST_URI'];
+$user_id = isset($_SESSION['id']) ? $_SESSION['id'] : null;
+
+$upload = Uploads::where('id', $user_id)->orderBy('created_at', 'desc');
+$upload = $upload->first();
 
 ?>
 <!doctype html>
@@ -29,6 +34,7 @@ $pathh = $_SERVER['REQUEST_URI'];
     <link rel="stylesheet" href="/public/assets/css/addDiscipline.css">
     <link rel="stylesheet" href="/public/assets/css/general.css">
     <link rel="stylesheet" href="/public/assets/css/confirmation.css">
+    <link rel="stylesheet" href="/public/assets/css/uploadPhoto.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
     </style>
@@ -53,6 +59,11 @@ $pathh = $_SERVER['REQUEST_URI'];
 
                 <div class="block-list">
                     <ul class="list">
+
+                        <?php if (!(strpos($_SERVER['REQUEST_URI'], '/discipline') !== false || strpos($_SERVER['REQUEST_URI'], '/group') !== false || strpos($_SERVER['REQUEST_URI'], '/student') !== false)): ?>
+                            <div class="empty">
+                            </div>
+                        <?php endif; ?>
                         <?php if (strpos($_SERVER['REQUEST_URI'], '/discipline') !== false || strpos($_SERVER['REQUEST_URI'], '/group') !== false || strpos($_SERVER['REQUEST_URI'], '/student') !== false): ?>
                             <div class="search-block">
                                 <form class="search-block-form" method="get" action="/searchResults">
@@ -64,10 +75,12 @@ $pathh = $_SERVER['REQUEST_URI'];
                                 </form>
                             </div>
                         <?php endif; ?>
-                        <?php if (!(strpos($_SERVER['REQUEST_URI'], '/discipline') !== false || strpos($_SERVER['REQUEST_URI'], '/group') !== false || strpos($_SERVER['REQUEST_URI'], '/student') !== false)): ?>
-                            <div class="empty">
-                            </div>
-                        <?php endif; ?>
+                        <div class="block-photo">
+                            <a class="photo-link"
+                               href="<?= app()->route->getUrl('/uploadPhoto') . '?id=' . $user_id ?>">
+                                <img src="/public/assets/img/<?= $upload->upload_name ?>">
+                            </a>
+                        </div>
                         <p class="tab-bar"><a href="<?= app()->route->getUrl('/discipline') ?>">Disciplines</a></p>
                         <p class="tab-bar"><a href="<?= app()->route->getUrl('/group') ?>">Groups</a></p>
                         <?php if (app()->auth::userHasRole(1)): ?>

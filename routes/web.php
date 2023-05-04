@@ -94,3 +94,9 @@ Route::add('POST', '/pageDisciplineEdit', [Controller\Interaction\Edit\EditPageD
 //Поиск
 Route::add('GET', '/searchResults', [Controller\Interaction\Search\Search::class, 'searchRequestGet'])
     ->middleware('auth');
+
+//Загрузка фото
+Route::add('GET', '/uploadPhoto', [Controller\Interaction\Create\UploadPhoto::class, 'uploadPhotoGet'])
+    ->middleware('auth');
+Route::add('POST', '/uploadPhoto', [Controller\Interaction\Create\UploadPhoto::class, 'uploadPhoto'])
+    ->middleware('auth');

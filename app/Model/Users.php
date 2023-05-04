@@ -49,9 +49,13 @@ class Users extends Model implements IdentityInterface
         return $this->belongsTo(Roles::class, 'role_id', 'role_id');
     }
 
-
     public function semestrDisciplines():BelongsTo
     {
         return $this->belongsTo(Semestrs::class, 'semestr_id', 'semestr_id');
+    }
+
+    public function uploads():BelongsTo
+    {
+        return $this->belongsTo(Uploads::class, 'id', 'id');
     }
 }
