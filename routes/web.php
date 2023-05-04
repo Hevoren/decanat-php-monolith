@@ -90,3 +90,7 @@ Route::add('GET', '/pageDisciplineEdit', [Controller\Interaction\Edit\EditPageDi
     ->middleware('auth', 'can:2');
 Route::add('POST', '/pageDisciplineEdit', [Controller\Interaction\Edit\EditPageDiscipline::class, 'editPageDiscipline'])
     ->middleware('auth', 'can:2');
+
+//Поиск
+Route::add('GET', '/searchResults', [Controller\Interaction\Search\Search::class, 'searchRequestGet'])
+    ->middleware('auth');

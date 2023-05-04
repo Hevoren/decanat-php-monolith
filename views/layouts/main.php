@@ -2,6 +2,9 @@
 
 use Src\Auth\Auth;
 
+$currentPage = $_SERVER['REQUEST_URI'];
+$path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -52,9 +55,10 @@ use Src\Auth\Auth;
                     <ul class="list">
                         <?php if (strpos($_SERVER['REQUEST_URI'], '/discipline') !== false || strpos($_SERVER['REQUEST_URI'], '/group') !== false || strpos($_SERVER['REQUEST_URI'], '/student') !== false): ?>
                             <div class="search-block">
-                                <form class="search-block-form" method="post">
+                                <form class="search-block-form" method="get" action="searchResults">
+                                    <input type="hidden" name="currentPage" value="<?= $path ?>">
                                     <label class="input-type-search">
-                                        <input required class="search-block-form-input" type="text">
+                                        <input required class="search-block-form-input" type="text" name="searchRequest">
                                     </label>
                                     <input class="search-block-form-submit" type="submit" value="GO">
                                 </form>
