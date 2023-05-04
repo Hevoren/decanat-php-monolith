@@ -41,11 +41,23 @@ use Src\Auth\Auth;
             <?php
             if (!app()->auth::check()):
                 ?>
+            <div class="login-block">
                 <p class="tab-bar"><a href="<?= app()->route->getUrl('/login') ?>">Sign In</a></p>
+            </div>
             <?php
             else:
                 ?>
+
+            <div class="block-list">
                 <ul class="list">
+                    <div class="search-block">
+                        <form class="search-block-form">
+                            <label class="input-type-search">
+                                <input required class="search-block-form-input" type="text">
+                            </label>
+                            <input class="search-block-form-submit" type="submit" value="GO">
+                        </form>
+                    </div>
                     <p class="tab-bar"><a href="<?= app()->route->getUrl('/discipline') ?>">Disciplines</a></p>
                     <p class="tab-bar"><a href="<?= app()->route->getUrl('/group') ?>">Groups</a></p>
                     <?php if (app()->auth::userHasRole(1)): ?>
@@ -53,6 +65,8 @@ use Src\Auth\Auth;
                     <?php endif; ?>
                     <p class="tab-bar"><a href="<?= app()->route->getUrl('/logout') ?>">Exit</a></p>
                 </ul>
+            </div>
+
             <?php
             endif;
             ?>

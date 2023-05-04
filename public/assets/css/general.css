@@ -4,7 +4,7 @@
     color: white;
 }
 
-*::selection{
+*::selection {
     background-color: #3bbfef;
 }
 
@@ -47,10 +47,14 @@ header {
 }
 
 .list {
-    margin-left: 80px;
+    margin-left: 120px;
     width: 450px;
     display: flex;
     flex-direction: row;
+}
+
+.login-block {
+    margin-left: 250px;
 }
 
 .title a {
@@ -60,6 +64,7 @@ header {
 
 .tab-bar {
     display: inline;
+    margin-left: 20px;
 }
 
 .tab-bar a {
@@ -74,16 +79,64 @@ header {
 
 .bar-title {
     text-align: center;
-    min-width: 50%;
+    min-width: 40%;
 }
 
 .bar {
     text-align: center;
-    width: 50%;
+    width: 60%;
 }
 
 .title {
+    margin-left: 190px;
     display: inline;
+}
+
+.search-block {
+    display: flex;
+    flex-direction: row;
+}
+
+.search-block-form {
+    display: flex;
+    flex-direction: row;
+}
+
+.search-block-form-submit {
+    margin-left: 5px;
+    border-radius: 15px;
+    width: 30px;
+    height: 30px;
+    border: none;
+    cursor: pointer;
+    background-color: #81bece;
+    transition: 0.5s;
+}
+
+.search-block-form-submit:hover {
+    background-color: #6296a3;
+}
+
+.input-type-search {
+    border-radius: 10px;
+    border: 2px solid #91bfcb;
+    box-shadow: none;
+    color: white;
+
+}
+
+.input-type-search:focus {
+    border: 2px solid black;
+    box-shadow: none;
+}
+
+.search-block-form-input {
+    border-radius: 10px;
+    height: 30px;
+    background: none;
+    border: none;
+    color: white;
+    text-align: left;
 }
 
 /*  */
