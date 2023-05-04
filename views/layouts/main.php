@@ -10,8 +10,8 @@ use Src\Auth\Auth;
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<!--    <link rel="stylesheet" href="../php-framework/public/assests/login.css">-->
-<!--    <link rel="stylesheet" href="/public/assets/login.css">-->
+    <!--    <link rel="stylesheet" href="../php-framework/public/assests/login.css">-->
+    <!--    <link rel="stylesheet" href="/public/assets/login.css">-->
 
     <link rel="stylesheet" href="../php-framework/public/assets/css/login.css">
     <link rel="stylesheet" href="../php-framework/public/assets/css/main.css">
@@ -41,31 +41,37 @@ use Src\Auth\Auth;
             <?php
             if (!app()->auth::check()):
                 ?>
-            <div class="login-block">
-                <p class="tab-bar"><a href="<?= app()->route->getUrl('/login') ?>">Sign In</a></p>
-            </div>
+                <div class="login-block">
+                    <p class="tab-bar"><a href="<?= app()->route->getUrl('/login') ?>">Sign In</a></p>
+                </div>
             <?php
             else:
                 ?>
 
-            <div class="block-list">
-                <ul class="list">
-                    <div class="search-block">
-                        <form class="search-block-form">
-                            <label class="input-type-search">
-                                <input required class="search-block-form-input" type="text">
-                            </label>
-                            <input class="search-block-form-submit" type="submit" value="GO">
-                        </form>
-                    </div>
-                    <p class="tab-bar"><a href="<?= app()->route->getUrl('/discipline') ?>">Disciplines</a></p>
-                    <p class="tab-bar"><a href="<?= app()->route->getUrl('/group') ?>">Groups</a></p>
-                    <?php if (app()->auth::userHasRole(1)): ?>
-                        <p class="tab-bar"><a href="<?= app()->route->getUrl('/cab') ?>">Cab</a></p>
-                    <?php endif; ?>
-                    <p class="tab-bar"><a href="<?= app()->route->getUrl('/logout') ?>">Exit</a></p>
-                </ul>
-            </div>
+                <div class="block-list">
+                    <ul class="list">
+                        <?php if (strpos($_SERVER['REQUEST_URI'], '/discipline') !== false || strpos($_SERVER['REQUEST_URI'], '/group') !== false || strpos($_SERVER['REQUEST_URI'], '/student') !== false): ?>
+                            <div class="search-block">
+                                <form class="search-block-form" method="post">
+                                    <label class="input-type-search">
+                                        <input required class="search-block-form-input" type="text">
+                                    </label>
+                                    <input class="search-block-form-submit" type="submit" value="GO">
+                                </form>
+                            </div>
+                        <?php endif; ?>
+                        <?php if (!(strpos($_SERVER['REQUEST_URI'], '/discipline') !== false || strpos($_SERVER['REQUEST_URI'], '/group') !== false || strpos($_SERVER['REQUEST_URI'], '/student') !== false)): ?>
+                            <div class="empty">
+                            </div>
+                        <?php endif; ?>
+                        <p class="tab-bar"><a href="<?= app()->route->getUrl('/discipline') ?>">Disciplines</a></p>
+                        <p class="tab-bar"><a href="<?= app()->route->getUrl('/group') ?>">Groups</a></p>
+                        <?php if (app()->auth::userHasRole(1)): ?>
+                            <p class="tab-bar"><a href="<?= app()->route->getUrl('/cab') ?>">Cab</a></p>
+                        <?php endif; ?>
+                        <p class="tab-bar"><a href="<?= app()->route->getUrl('/logout') ?>">Exit</a></p>
+                    </ul>
+                </div>
 
             <?php
             endif;

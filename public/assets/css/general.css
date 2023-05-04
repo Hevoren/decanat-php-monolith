@@ -95,13 +95,13 @@ header {
 .search-block {
     display: flex;
     flex-direction: row;
+    width: 220px;
 }
 
 .search-block-form {
     display: flex;
     flex-direction: row;
 }
-
 
 .search-block-form-submit:hover {
     background-color: #6296a3;
@@ -140,6 +140,11 @@ header {
     cursor: pointer;
     background-color: #81bece;
     transition: 0.5s;
+}
+
+.empty {
+    min-width: 220px;
+    background: none;
 }
 
 /*  */
