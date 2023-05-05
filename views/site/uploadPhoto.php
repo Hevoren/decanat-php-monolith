@@ -10,8 +10,8 @@ $user_id = isset($_SESSION['id']) ? $_SESSION['id'] : null;
         <div class="div-main-title-discipline">
             <p class="main-title">Add Photo</p>
         </div>
-        <img class="img-upload-photo" src="/public/assets/img/<?= $upload->upload_name ?>">
-        <form class="form-upload-photo" action="/uploadPhoto" method="post" enctype="multipart/form-data">
+        <img class="img-upload-photo" src="../php-framework/public/assets/img/<?= $upload->upload_name ?>">
+        <form class="form-upload-photo" action="uploadPhoto" method="post" enctype="multipart/form-data">
             <div class="upload-photo">
                 <input name="csrf_token" type="hidden" value="<?= app()->auth::generateCSRF() ?>"/>
                 <input type="hidden" name="user" value="<?= $user_id ?>">

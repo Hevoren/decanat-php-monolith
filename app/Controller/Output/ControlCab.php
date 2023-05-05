@@ -2,7 +2,9 @@
 
 namespace Controller\Output;
 
+use Controller\Interaction\Create\UploadPhoto;
 use Model\TempUsers;
+use Model\Uploads;
 use Model\Users;
 use Src\Request;
 use Src\View;
@@ -31,6 +33,10 @@ class ControlCab
             if ($tempUser) {
                 $tempUser->active = 1;
                 $tempUser->save();
+            }
+            $upload = Uploads::where('id', $user->id)->get();
+            foreach ($upload as $up) {
+                $up->delete();
             }
             $user->delete();
         }

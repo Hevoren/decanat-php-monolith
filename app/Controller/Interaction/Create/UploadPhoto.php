@@ -26,12 +26,12 @@ class UploadPhoto
                 $ext = pathinfo($_FILES['image']['name'], PATHINFO_EXTENSION);
                 $filename = uniqid().'.'.$ext;
                 $fileTmpName = $_FILES['image']['tmp_name'];
-                $pathFile = 'E:\OpenServer\OSPanel\domains\php-framework\public\assets\img\\' . $filename;
+
+                $pathFile = $_SERVER['DOCUMENT_ROOT'] . '/php-framework/public/assets/img/' . $filename;
 
                 if (!move_uploaded_file($fileTmpName, $pathFile)){
-                    echo 'hasdf';
+                    var_dump('gg');
                 }
-
                 $upload = Uploads::create([
                     'upload_name' => $filename,
                     'id' => $userId,
