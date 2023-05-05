@@ -16,7 +16,8 @@
         "illuminate/events": "10.x-dev",
         "nikic/fast-route": "^2.0@dev",
         "laravelcollective/html": "6.x-dev",
-        "hevoren/collect": "dev-master"
+        "hevoren/collect": "dev-master",
+        "hevoren/gather": "dev-master"
     },
     "autoload": {
         "psr-4": {

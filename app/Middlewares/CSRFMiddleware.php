@@ -6,6 +6,7 @@ use Exception;
 use Src\Request;
 use Src\Session;
 
+
 class CSRFMiddleware
 {
     public function handle(Request $request): void
