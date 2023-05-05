@@ -45,6 +45,7 @@ class AuthControl
 
         if ($request->method === 'POST' && TempUsers::create($request->all())) {
             $messageE = 'In a little while our administrator will approve your registration.';
+            app()->route->redirect('/register');
             return new View('site.register', ['messageE' => $messageE]);
         }
     }

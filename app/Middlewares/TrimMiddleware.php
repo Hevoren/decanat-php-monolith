@@ -14,3 +14,4 @@ class TrimMiddleware
         return $request;
     }
 }
+

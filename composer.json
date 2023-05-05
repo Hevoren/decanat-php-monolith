@@ -15,12 +15,17 @@
         "illuminate/database": "10.x-dev",
         "illuminate/events": "10.x-dev",
         "nikic/fast-route": "^2.0@dev",
-        "laravelcollective/html": "6.x-dev"
+        "laravelcollective/html": "6.x-dev",
+        "hevoren/collect": "dev-master"
     },
     "autoload": {
         "psr-4": {
             "Src\\": "core/Src/",
             "": "app/"
         }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^10.2@dev",
+      "ext-xdebug": "*"
     }
 }

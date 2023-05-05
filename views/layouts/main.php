@@ -66,7 +66,7 @@ $upload = $upload->first();
                         <?php endif; ?>
                         <?php if (strpos($_SERVER['REQUEST_URI'], '/discipline') !== false || strpos($_SERVER['REQUEST_URI'], '/group') !== false || strpos($_SERVER['REQUEST_URI'], '/student') !== false): ?>
                             <div class="search-block">
-                                <form class="search-block-form" method="get" action="/searchResults">
+                                <form class="search-block-form" method="get" action="searchResults">
                                     <input type="hidden" name="currentPage" value="<?= $path ?>">
                                     <input type="hidden" name="currentPagee" value="<?= $pathh ?>">
                                     <input required class="search-block-form-input" type="text"
