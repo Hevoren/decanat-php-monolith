@@ -2,7 +2,7 @@
 namespace Middlewares;
 
 use Src\Request;
-use function Gather\collection;
+use function Collect\collection;;
 
 class TrimMiddleware
 {

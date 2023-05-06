@@ -17,7 +17,8 @@
         "nikic/fast-route": "^2.0@dev",
         "laravelcollective/html": "6.x-dev",
         "hevoren/collect": "dev-master",
-        "hevoren/gather": "dev-master"
+        "hevoren/gather": "dev-master",
+        "hevoren/validator": "dev-master"
     },
     "autoload": {
         "psr-4": {

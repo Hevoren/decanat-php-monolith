@@ -6,7 +6,7 @@ use Model\TempUsers;
 use Model\Users;
 use Src\Auth\Auth;
 use Src\Request;
-use Src\Validator\Validator;
+use Validator\Validator;
 use Src\View;
 
 class AuthControl

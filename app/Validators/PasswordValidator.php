@@ -2,7 +2,8 @@
 
 namespace Validators;
 
-use Src\Validator\AbstractValidator;
+
+use Validator\AbstractValidator;
 
 class PasswordValidator extends AbstractValidator
 {

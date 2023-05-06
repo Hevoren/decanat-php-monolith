@@ -2,10 +2,8 @@
 
 namespace Controller\Interaction\Create;
 
-use Model\Students;
 use Model\Uploads;
 use Src\Request;
-use Src\Validator\Validator;
 use Src\View;
 
 class UploadPhoto
