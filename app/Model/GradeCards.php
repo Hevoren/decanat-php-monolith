@@ -37,4 +37,9 @@ class GradeCards extends Model
         return $this->belongsTo(Grades::class, 'grade_id', 'grade_id');
     }
 
+    public function controls()
+    {
+        return $this->belongsTo(Controls::class, 'control_id', 'control_id');
+    }
+
 }

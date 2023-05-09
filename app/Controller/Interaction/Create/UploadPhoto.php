@@ -25,7 +25,7 @@ class UploadPhoto
                 $filename = uniqid().'.'.$ext;
                 $fileTmpName = $_FILES['image']['tmp_name'];
 
-                $pathFile = $_SERVER['DOCUMENT_ROOT'] . '/php-framework/public/assets/img/' . $filename;
+                $pathFile = $_SERVER['DOCUMENT_ROOT'] . '/public/assets/img/' . $filename;
 
                 if (!move_uploaded_file($fileTmpName, $pathFile)){
                     var_dump('gg');

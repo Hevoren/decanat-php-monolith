@@ -18,7 +18,8 @@ class Users extends Model implements IdentityInterface
     protected $fillable = [
         'name',
         'login',
-        'password'
+        'password',
+        'token'
     ];
 
     protected static function booted()
@@ -44,17 +45,17 @@ class Users extends Model implements IdentityInterface
             'password' => md5($credentials['password'])])->first();
     }
 
-    public function role():BelongsTo
+    public function role(): BelongsTo
     {
         return $this->belongsTo(Roles::class, 'role_id', 'role_id');
     }
 
-    public function semestrDisciplines():BelongsTo
+    public function semestrDisciplines(): BelongsTo
     {
         return $this->belongsTo(Semestrs::class, 'semestr_id', 'semestr_id');
     }
 
-    public function uploads():BelongsTo
+    public function uploads(): BelongsTo
     {
         return $this->belongsTo(Uploads::class, 'id', 'id');
     }

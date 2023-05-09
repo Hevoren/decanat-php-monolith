@@ -45,7 +45,6 @@ class AuthControl
 
         if ($request->method === 'POST' && TempUsers::create($request->all())) {
             $messageE = 'In a little while our administrator will approve your registration.';
-            app()->route->redirect('/register');
             return new View('site.register', ['messageE' => $messageE]);
         }
     }
@@ -58,14 +57,24 @@ class AuthControl
         }
         //Если удалось аутентифицировать пользователя, то редирект
         if (Auth::attempt($request->all())) {
+            $token = app()->auth::generateToken();
+            Auth::user()->update([
+                'token' => $token
+            ]);
             app()->route->redirect('/discipline');
         }
         //Если аутентификация не удалась, то сообщение об ошибке
         return new View('site.login', ['message' => 'Неправильные логин или пароль']);
     }
 
-    public function logout(): void
+    public function logout(Request $request): void
     {
+        if (!Auth::attempt($request->all())) {
+            $token = null;
+            Auth::user()->update([
+                'token' => $token
+            ]);
+        }
         Auth::logout();
         app()->route->redirect('/discipline');
     }

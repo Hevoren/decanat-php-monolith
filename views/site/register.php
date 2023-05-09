@@ -2,9 +2,9 @@
     <div class="login-form">
         <div class="form-block">
             <p class="form-block-title">Sign Up</p>
-<!--            <p style="color: red; margin-top: 10px">--><?//= $message ?? ''; ?><!--</p>-->
+            <p style="color: red; margin-top: 10px"><?= $message ?? ''; ?></p>
             <p style="color: #005e00; margin-top: 10px; text-align: center"><?= $messageE ?? ''; ?></p>
-            <p><?= $messageD ?></p>
+            <p><?= $messageD ?? '' ?></p>
 <!--            --><?php //if (isset($messageD)) { ?>
 <!--                --><?php //$errorss = json_decode($messageD, true); ?>
 <!--                --><?php //if (count($errorss) > 0) { ?>
